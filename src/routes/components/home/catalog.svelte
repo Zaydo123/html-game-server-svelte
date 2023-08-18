@@ -2,42 +2,47 @@
 <script>
 
     import { onMount } from "svelte";
-
     //get all game info from the server
-    let games = JSON.parse(`{"home_visits":268807,"games":[{"name":"Cookie Clicker","id":"Cookie-Clicker","image":"/game_images/resized_appImage_Cookie-Clicker.png","visits":24975,"ranking":3,"description":""},{"name":"Mario Vs Luigi","id":"Mario-Vs-Luigi","image":"/game_images/resized_appImage_Mario-Vs-Luigi.png","visits":2802,"ranking":27,"description":""},{"name":"Super Mario 64","id":"Super-Mario-64","image":"/game_images/resized_appImage_Super-Mario-64.png","visits":11595,"ranking":9,"description":""},{"name":"2048","id":"2048","image":"/game_images/resized_appImage_2048.gif","visits":2908,"ranking":26,"description":""},{"name":"Slope","id":"Slope","image":"/game_images/resized_appImage_Slope.png","visits":36245,"ranking":2,"description":""},{"name":"Thwack","id":"thwack","image":"/game_images/resized_appImage_thwack.png","visits":2726,"ranking":29,"description":""},{"name":"Narrow One","id":"narrow-one","image":"/game_images/resized_appImage_narrow-one.png","visits":3240,"ranking":25,"description":""},{"name":"Geometry Dash","id":"Geometry-Dash","image":"/game_images/resized_appImage_Geometry-Dash.png","visits":7154,"ranking":16,"description":""},{"name":"Picohot","id":"picohot","image":"/game_images/resized_appImage_picohot.png","visits":2227,"ranking":32,"description":""},{"name":"Cat Ninja","id":"Cat-Ninja","image":"/game_images/resized_appImage_Cat-Ninja.jpeg","visits":4579,"ranking":22,"description":""},{"name":"Tanuki Sunset","id":"tanuki-sunset","image":"/game_images/resized_appImage_tanuki-sunset.webp","visits":12853,"ranking":7,"description":""},{"name":"Clay Scape","id":"clay-scape","image":"/game_images/resized_appImage_clay-scape.png","visits":3531,"ranking":24,"description":""},{"name":"Axis Football League","id":"Axis-Football-League","image":"/game_images/resized_appImage_Axis-Football-League.png","visits":2646,"ranking":31,"description":""},{"name":"HexGL","id":"HexGL-master","image":"/game_images/resized_appImage_HexGL-master.jpeg","visits":1735,"ranking":35,"description":""},{"name":"Cursed To Golf","id":"cursed-to-golf","image":"/game_images/resized_appImage_cursed-to-golf.jpeg","visits":1684,"ranking":36,"description":""},{"name":"Chess","id":"chess","image":"/game_images/resized_appImage_chess.png","visits":1977,"ranking":33,"description":""},{"name":"Drift Hunters","id":"drift-hunters","image":"/game_images/resized_appImage_drift-hunters.png","visits":10231,"ranking":10,"description":""},{"name":"Tenjutsu","id":"tenjutsu","image":"/game_images/resized_appImage_tenjutsu.png","visits":1922,"ranking":34,"description":""},{"name":"Shell Shockers","id":"Shell-Shockers","image":"/game_images/resized_appImage_Shell-Shockers.jpeg","visits":6070,"ranking":18,"description":""},{"name":"Retrobowl","id":"retrobowl","image":"/game_images/resized_appImage_retrobowl.jpeg","visits":41199,"ranking":0,"description":""},{"name":"Friday Night Funkin","id":"Friday-Night-Funkin","image":"/game_images/resized_appImage_Friday-Night-Funkin.jpg","visits":5380,"ranking":19,"description":""},{"name":"Happy Wheels","id":"3245676432","image":"/game_images/happywheels.jpeg","visits":9430,"ranking":11,"description":""},{"name":"Basketball Stars","id":"basketball-stars","image":"/game_images/basketball-stars.jpeg","visits":9206,"ranking":13,"description":""},{"name":"Fruit Ninja","id":"fruit-ninja","image":"/game_images/fruit-ninja.jpeg","visits":3715,"ranking":23,"description":""},{"name":"VEX 3","id":"vex-3","image":"/game_images/vex-3.jpeg","visits":4862,"ranking":21,"description":""},{"name":"Snowball Racing","id":"snowball-racing","image":"/game_images/snowball-racing.jpeg","visits":5239,"ranking":20,"description":""},{"name":"Stick Duel: The War","id":"stick-duel-the-war","image":"/game_images/stick-duel-the-war.jpeg","visits":6214,"ranking":17,"description":""},{"name":"Moto X3M Bike Race","id":"moto-x3m-bike-race","image":"/game_images/moto-x3m-bike-race.jpeg","visits":7778,"ranking":14,"description":""},{"name":"Paper.io 2","id":"paperio-2","image":"/game_images/paperio-2.jpeg","visits":23668,"ranking":4,"description":""},{"name":"Color Road 2","id":"color-road-2","image":"/game_images/color-road.jpg","visits":2653,"ranking":30,"description":""},{"name":"Nebula","id":"Nebula","image":"/game_images/nebula.jpeg","visits":11992,"ranking":8,"description":"Website Unblocker! (Mirror added)"},{"name":"Run 3","id":"run-3","image":"/game_images/run-3.png","visits":9266,"ranking":12,"description":""},{"name":"1v1.lol","id":"lol","image":"/game_images/lol.png","visits":16122,"ranking":5,"description":"might be blocked"},{"name":"Madalin Multiplayer","id":"madalin","image":"/game_images/madalin.jpeg","visits":7699,"ranking":15,"description":""},{"name":"Snowball.io","id":"snowball-io","image":"/game_images/snowball-io.png","visits":2735,"ranking":28,"description":""},{"name":"FB and WG","id":"fbwg1","image":"/game_images/fbwg1.jpeg","visits":974,"ranking":38,"description":""},{"name":"FB and WG 2","id":"fbwg2","image":"/game_images/fbwg2.jpeg","visits":378,"ranking":44,"description":""},{"name":"FB and WG 3","id":"fbwg3","image":"/game_images/fbwg3.jpeg","visits":287,"ranking":45,"description":""},{"name":"FB and WG 4","id":"fbwg4","image":"/game_images/fbwg4.jpeg","visits":263,"ranking":46,"description":"New!"},{"name":"FB and WG 5","id":"fbwg5","image":"/game_images/fbwg5.jpeg","visits":475,"ranking":42,"description":""},{"name":"FB and WG 6","id":"fbwg6","image":"/game_images/fbwg6.jpeg","visits":380,"ranking":43,"description":""},{"name":"Minecraft","id":"Minecraft","image":"/game_images/resized_appImage_Minecraft.png","visits":38709,"ranking":1,"description":"Server List : https://eaglercraft.ru/p/servers/"},{"name":"Subway Surfers","id":"subway-surfers","image":"/game_images/subway-surfers.png","visits":13106,"ranking":6,"description":"New!"},{"name":"Age of War","id":"age-of-war","image":"/game_images/age-of-war.jpeg","visits":555,"ranking":41,"description":"New!"},{"name":"Parkour Block 2","id":"pk-block-2","image":"/fetch-image?url=https://img.gamedistribution.com/cb6ef4e519594dda80934b30f2baaff9-512x340.jpeg","visits":561,"ranking":40,"description":"New!"},{"name":"Impostor","id":"impostor","image":"/fetch-image?url=https://img.gamedistribution.com/9abe6af0fbb440b98a3e24bf7fb0636a-512x384.jpeg","visits":656,"ranking":39,"description":"New!"},{"name":"Traffic Jam 3D","id":"tf-jam-3d","image":"/fetch-image?url=https://img.gamedistribution.com/337302b23b5943d8bcfc501d81d50cdb-512x340.jpeg","visits":1146,"ranking":37,"description":"New!"}]}`);
-    //sort games by visits
-    games = games.games;
-    
+
     function sortGamesByVisits() {
         games.sort(function(a, b) {
             return b.visits - a.visits;
         });
     }
-    sortGamesByVisits();
+
+    //get games from /api/games
+     let games = [];
+    onMount(async () => {
+        const res = await fetch("/api/games");
+        const fetchedGames = await res.json();
+        games = [...fetchedGames]; // This will trigger Svelte's reactivity
+        sortGamesByVisits();
+    });
+
 
     
 
 
     let searchTerm = "";
-    let sortedGames = games;
+    let sortedGames = [];
+    $: sortedGames = games
 
     function searchGames(){
         if(searchTerm == ""){
             sortedGames = games; // If no search term, show all games
             return;
         }
-        sortedGames = games.filter(game => game.name.toLowerCase().includes(searchTerm.toLowerCase()));
+        sortedGames = games.filter(game => game.Name.toLowerCase().includes(searchTerm.toLowerCase()));
     }
 
 
     function sortGames() {
     if (selectedFilter == "visits") {
-        sortedGames = sortedGames.sort((a, b) => b.visits - a.visits);
+        sortedGames = sortedGames.sort((a, b) => b.Visits - a.Visits);
     } else if (selectedFilter == "alphabetical") {
-        sortedGames = sortedGames.sort((a, b) => a.name.localeCompare(b.name));
+        sortedGames = sortedGames.sort((a, b) => a.Name.localeCompare(b.Name));
     } else if (selectedFilter == "newest") {
-        // Assuming you have a 'dateAdded' property in your games data
-        // sortedGames.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+        //sortedGames.sort((a, b) => new Date(b["Date Added"]) - new Date(a.dateAdded));
     } else if (selectedFilter == "oldest") {
         // Assuming you have a 'dateAdded' property in your games data
         // sortedGames.sort((a, b) => new Date(a.dateAdded) - new Date(b.dateAdded));
@@ -80,9 +85,9 @@
     <div class="games-catalog">
         {#each sortedGames as game}
         <div class="game-card">
-            <img src={"https://onlylazy.com" + game.image} alt={game.name} class="game-image">
-            <h2 class="game-title">{game.name}</h2>
-            <a href={`#${game.id}`} class="game-play-button">Play</a>
+            <img src={"https://physics-central.com" + game.Image} alt={game.Name} class="game-image">
+            <h2 class="game-title">{game.Name}</h2>
+            <a href={`#${game.ID}`} class="game-play-button">Play</a>
         </div>
         {/each}
     </div>

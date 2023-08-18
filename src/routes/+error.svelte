@@ -15,13 +15,7 @@
 	</div>
 </div>
 
-	
-
-
-
-
 <style>
-
 
 	h1 { 
 		color : #333;
