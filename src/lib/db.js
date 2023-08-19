@@ -70,12 +70,15 @@ class database{
         try {
             conn = await this.pool.getConnection();
             const rows = await conn.query(sql, values);
+            console.log("rows changed: " + rows.changedRows);
             return rows.changedRows;
         }
         catch (err) {
+            console.log(err);
             throw err;
         }
         finally {
+            console.log("Update Connection closed");
             if (conn) return conn.end();
         }
     }

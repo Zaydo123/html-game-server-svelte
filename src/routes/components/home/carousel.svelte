@@ -6,25 +6,25 @@
       {
         "title": "",
         "description": "",
-        "image": "banners/PhysicsChatAd.png",
+        "image": "/images/banners/PhysicsChatAd.png",
         "href" : "https://physics-chat.com"
       },
       {
         "title": "Welcome",
         "description": "The new and improved Physics Central!",
-        "image": "banners/RocketBanner1@2.5x.png",
+        "image": "/images/banners/RocketBanner1@2.5x.png",
         "href" : "/"
       },
       {
         "title": "Having issues?",
         "description": "Email us at: support@physics-central.com",
-        "image": "banners/RocketBanner2@2.5x.png",
+        "image": "/images/banners/RocketBanner2@2.5x.png",
         "href" : "mailto:support@physics-central.com"
       }, 
       {
         "title": "Request a game",
         "description": "Send us a suggestion. We'll try to make it happen.",
-        "image": "banners/RocketBanner3@2.5x.png"
+        "image": "/images/banners/RocketBanner3@2.5x.png"
       }
     ];
 

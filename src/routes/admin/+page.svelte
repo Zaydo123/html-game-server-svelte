@@ -1,26 +1,72 @@
-<link rel='stylesheet' href='css/global.css' />
 
-<div class="login-box">
-    <form>
-      <div class="user-box">
-        <input type="text" name="" required="">
-        <label for="">Username</label>
-      </div>
-      <div class="user-box">
-        <input type="password" name="" required="">
-        <label for="">Password</label>
-      </div><center>
-      <a href="/">
-             SEND
-         <span></span>
-      </a></center>
-    </form>
+<script>
+
+  import { onMount } from "svelte";
+
+  let username = '';
+  let password = '';
+  
+  //send request to /authorization/compare-authorization to see if already logged in 
+    onMount(async () => {
+        const response = await fetch('/admin/api/authorization/compare-authorization', {
+            method: 'POST'
+        });
+    
+        // Clear the password for security reasons
+        password = '';
+    
+        if (response.status === 200) {
+            // Redirect to the hub if credentials are confirmed
+            window.location.href = '/admin/hub';
+        } 
+    });
+
+
+  async function handleLogin() {
+      const response = await fetch('/admin/api/authorization', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ username, password })
+      });
+  
+      // Clear the password for security reasons
+      password = '';
+  
+      if (response.status === 200) {
+          // Redirect to the hub if credentials are confirmed
+          window.location.href = '/admin/hub';
+      } else {
+          alert('Invalid credentials');
+      }
+  }
+  </script>
+  
+  <link rel='stylesheet' href='css/global.css' />
+  
+  <div class="login-box">
+      <form on:submit|preventDefault={handleLogin}>
+          <div class="user-box">
+              <input bind:value={username} type="text" name="" required="">
+              <label for="">Username</label>
+          </div>
+          <div class="user-box">
+              <input bind:value={password} type="password" name="" required="">
+              <label for="">Password</label>
+          </div>
+          <center>
+              <button class="login-button" type="submit">
+                  SEND
+                  <span></span>
+              </button>
+          </center>
+      </form>
   </div>
-
-
-<style>
-
-.login-box {
+  
+  <style>
+  /* ... Your existing styles ... */
+  .login-box {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -68,52 +114,59 @@
   font-size: 12px;
 }
 
-.login-box form a {
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
-  color: #ffffff;
-  font-size: 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  transition: .5s;
-  margin-top: 40px;
-  letter-spacing: 4px
-}
-
-.login-box a:hover {
-  background: #03f40f;
-  color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #03f40f,
-              0 0 25px #03f40f,
-              0 0 50px #03f40f,
-              0 0 100px #03f40f;
-}
-
 .login-box a span {
   position: absolute;
   display: block;
 }
 
-@keyframes btn-anim1 {
-  0% {
-    left: -100%;
+  /* Styles for the button to mimic the <a> element */
+  .login-button {
+      background: none;
+      border: none;
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      color: #ffffff;
+      font-size: 16px;
+      text-decoration: none;
+      text-transform: uppercase;
+      overflow: hidden;
+      transition: .5s;
+      margin-top: 40px;
+      letter-spacing: 4px;
+      cursor: pointer;
+      outline: none;
   }
-
-  50%,100% {
-    left: 100%;
+  
+  .login-button:hover {
+      background: #03f40f;
+      color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 5px #03f40f,
+                  0 0 25px #03f40f,
+                  0 0 50px #03f40f,
+                  0 0 100px #03f40f;
   }
-}
-
-.login-box a span:nth-child(1) {
-  bottom: 2px;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #03f40f);
-  animation: btn-anim1 2s linear infinite;
-}
-
-</style>
+  
+  .login-button span {
+      position: absolute;
+      bottom: 2px;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #03f40f);
+      animation: btn-anim1 2s linear infinite;
+  }
+  
+  @keyframes btn-anim1 {
+      0% {
+          left: -100%;
+      }
+      50%,100% {
+          left: 100%;
+      }
+  }
+  
+  /* ... Rest of your styles ... */
+  </style>
+  

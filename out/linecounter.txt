@@ -1,0 +1,243 @@
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2023-08-19 01:46:53
+count workspace : /Users/zaydalzein/Desktop/Projects/html-game-server-svelte
+total files : 218
+total code lines : 6854
+total comment lines : 271
+total blank lines : 485
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |        .svelte|           1133|             29|            255|     17|
+   |            .js|           3667|            187|            135|     54|
+   |          .html|             12|              0|              0|   0.18|
+   |           .css|             18|              0|              0|   0.26|
+   |          .json|           1734|              0|             57|     25|
+   |            .ts|            220|             54|             28|    3.2|
+   |       .example|             12|              0|              2|   0.18|
+   |               |             46|              0|              1|   0.67|
+   |            .md|             12|              1|              7|   0.18|
+   -------------------------------------------------------------------------
+.env, code is 13, comment is 0, blank is 0.
+.env.example, code is 12, comment is 0, blank is 2.
+.gitignore, code is 10, comment is 0, blank is 0.
+.npmrc, code is 2, comment is 0, blank is 0.
+.prettierignore, code is 12, comment is 0, blank is 1.
+.prettierrc, code is 9, comment is 0, blank is 0.
+.svelte-kit/ambient.d.ts, code is 99, comment is 54, blank is 8.
+.svelte-kit/generated/client-optimized/app.js, code is 14, comment is 0, blank is 5.
+.svelte-kit/generated/client-optimized/matchers.js, code is 1, comment is 0, blank is 0.
+.svelte-kit/generated/client-optimized/nodes/0.js, code is 1, comment is 0, blank is 0.
+.svelte-kit/generated/client-optimized/nodes/1.js, code is 1, comment is 0, blank is 0.
+.svelte-kit/generated/client-optimized/nodes/2.js, code is 1, comment is 0, blank is 0.
+.svelte-kit/generated/client/app.js, code is 20, comment is 0, blank is 5.
+.svelte-kit/generated/client/matchers.js, code is 1, comment is 0, blank is 0.
+.svelte-kit/generated/client/nodes/0.js, code is 1, comment is 0, blank is 0.
+.svelte-kit/generated/client/nodes/1.js, code is 1, comment is 0, blank is 0.
+.svelte-kit/generated/client/nodes/2.js, code is 1, comment is 0, blank is 0.
+.svelte-kit/generated/client/nodes/3.js, code is 1, comment is 0, blank is 0.
+.svelte-kit/generated/client/nodes/4.js, code is 1, comment is 0, blank is 0.
+.svelte-kit/generated/client/nodes/5.js, code is 1, comment is 0, blank is 0.
+.svelte-kit/generated/client/nodes/6.js, code is 1, comment is 0, blank is 0.
+.svelte-kit/generated/client/nodes/7.js, code is 1, comment is 0, blank is 0.
+.svelte-kit/generated/root.svelte, code is 46, comment is 1, blank is 9.
+.svelte-kit/generated/server/internal.js, code is 26, comment is 1, blank is 4.
+.svelte-kit/output/client/_app/immutable/assets/0.1c065b90.css, code is 1, comment is 0, blank is 0.
+.svelte-kit/output/client/_app/immutable/assets/2.6a0c59ad.css, code is 1, comment is 0, blank is 0.
+.svelte-kit/output/client/_app/immutable/assets/_layout.1c065b90.css, code is 1, comment is 0, blank is 0.
+.svelte-kit/output/client/_app/immutable/assets/_page.5b24f7c3.css, code is 1, comment is 0, blank is 0.
+.svelte-kit/output/client/_app/immutable/chunks/index.c152eccd.js, code is 1, comment is 0, blank is 0.
+.svelte-kit/output/client/_app/immutable/chunks/scheduler.6b5a33ca.js, code is 1, comment is 0, blank is 0.
+.svelte-kit/output/client/_app/immutable/chunks/singletons.4a9b55ef.js, code is 1, comment is 0, blank is 0.
+.svelte-kit/output/client/_app/immutable/entry/app.6ac99b2e.js, code is 1, comment is 0, blank is 0.
+.svelte-kit/output/client/_app/immutable/entry/start.cd2870dd.js, code is 3, comment is 1, blank is 0.
+.svelte-kit/output/client/_app/immutable/nodes/0.c7c519ad.js, code is 1, comment is 0, blank is 0.
+.svelte-kit/output/client/_app/immutable/nodes/1.fdb3c55d.js, code is 1, comment is 0, blank is 0.
+.svelte-kit/output/client/_app/immutable/nodes/2.14014b9b.js, code is 1, comment is 0, blank is 0.
+.svelte-kit/output/client/_app/version.json, code is 1, comment is 0, blank is 0.
+.svelte-kit/output/client/assets/search-icon.png, it is a binary file.
+.svelte-kit/output/client/banners/default-banner.jpg, it is a binary file.
+.svelte-kit/output/client/banners/PhysicsChatAd.png, it is a binary file.
+.svelte-kit/output/client/banners/RocketBanner1@2.5x.png, it is a binary file.
+.svelte-kit/output/client/banners/RocketBanner1@2x.png, it is a binary file.
+.svelte-kit/output/client/banners/RocketBanner1@3x.png, it is a binary file.
+.svelte-kit/output/client/banners/RocketBanner2@2.5x.png, it is a binary file.
+.svelte-kit/output/client/banners/RocketBanner2@3x.png, it is a binary file.
+.svelte-kit/output/client/banners/RocketBanner3@2.5x.png, it is a binary file.
+.svelte-kit/output/client/banners/RocketBanner3@3x.png, it is a binary file.
+.svelte-kit/output/client/css/global.css, code is 6, comment is 0, blank is 0.
+.svelte-kit/output/client/favicon.png, it is a binary file.
+.svelte-kit/output/client/game_images/age-of-war.jpeg, it is a binary file.
+.svelte-kit/output/client/game_images/basketball-stars.jpeg, it is a binary file.
+.svelte-kit/output/client/game_images/color-road.jpg, it is a binary file.
+.svelte-kit/output/client/game_images/fbwg1.jpeg, it is a binary file.
+.svelte-kit/output/client/game_images/fbwg2.jpeg, it is a binary file.
+.svelte-kit/output/client/game_images/fbwg3.jpeg, it is a binary file.
+.svelte-kit/output/client/game_images/fbwg4.jpeg, it is a binary file.
+.svelte-kit/output/client/game_images/fbwg5.jpeg, it is a binary file.
+.svelte-kit/output/client/game_images/fbwg6.jpeg, it is a binary file.
+.svelte-kit/output/client/game_images/fruit-ninja.jpeg, it is a binary file.
+.svelte-kit/output/client/game_images/happywheels.jpeg, it is a binary file.
+.svelte-kit/output/client/game_images/lol.png, it is a binary file.
+.svelte-kit/output/client/game_images/madalin.jpeg, it is a binary file.
+.svelte-kit/output/client/game_images/moto-x3m-bike-race.jpeg, it is a binary file.
+.svelte-kit/output/client/game_images/nebula.jpeg, it is a binary file.
+.svelte-kit/output/client/game_images/paperio-2.jpeg, it is a binary file.
+.svelte-kit/output/client/game_images/resized_appImage_2048.gif, it is a binary file.
+.svelte-kit/output/client/game_images/resized_appImage_Axis-Football-League.png, it is a binary file.
+.svelte-kit/output/client/game_images/resized_appImage_Cat-Ninja.jpeg, it is a binary file.
+.svelte-kit/output/client/game_images/resized_appImage_chess.png, it is a binary file.
+.svelte-kit/output/client/game_images/resized_appImage_clay-scape.png, it is a binary file.
+.svelte-kit/output/client/game_images/resized_appImage_Cookie-Clicker.png, it is a binary file.
+.svelte-kit/output/client/game_images/resized_appImage_cursed-to-golf.jpeg, it is a binary file.
+.svelte-kit/output/client/game_images/resized_appImage_drift-hunters.png, it is a binary file.
+.svelte-kit/output/client/game_images/resized_appImage_Friday-Night-Funkin.jpg, it is a binary file.
+.svelte-kit/output/client/game_images/resized_appImage_Geometry-Dash.png, it is a binary file.
+.svelte-kit/output/client/game_images/resized_appImage_HexGL-master.jpeg, it is a binary file.
+.svelte-kit/output/client/game_images/resized_appImage_Mario-Vs-Luigi.png, it is a binary file.
+.svelte-kit/output/client/game_images/resized_appImage_Minecraft.png, it is a binary file.
+.svelte-kit/output/client/game_images/resized_appImage_narrow-one.png, it is a binary file.
+.svelte-kit/output/client/game_images/resized_appImage_picohot.png, it is a binary file.
+.svelte-kit/output/client/game_images/resized_appImage_retrobowl.jpeg, it is a binary file.
+.svelte-kit/output/client/game_images/resized_appImage_Shell-Shockers.jpeg, it is a binary file.
+.svelte-kit/output/client/game_images/resized_appImage_Slope.png, it is a binary file.
+.svelte-kit/output/client/game_images/resized_appImage_Super-Mario-64.png, it is a binary file.
+.svelte-kit/output/client/game_images/resized_appImage_tanuki-sunset.webp, it is a binary file.
+.svelte-kit/output/client/game_images/resized_appImage_tenjutsu.png, it is a binary file.
+.svelte-kit/output/client/game_images/resized_appImage_thwack.png, it is a binary file.
+.svelte-kit/output/client/game_images/resized_appImage_Ultraviolet.png, it is a binary file.
+.svelte-kit/output/client/game_images/run-3.png, it is a binary file.
+.svelte-kit/output/client/game_images/snowball-io.png, it is a binary file.
+.svelte-kit/output/client/game_images/snowball-racing.jpeg, it is a binary file.
+.svelte-kit/output/client/game_images/stick-duel-the-war.jpeg, it is a binary file.
+.svelte-kit/output/client/game_images/subway-surfers.png, it is a binary file.
+.svelte-kit/output/client/game_images/traffic-jam-3d.jpeg, it is a binary file.
+.svelte-kit/output/client/game_images/vex-3.jpeg, it is a binary file.
+.svelte-kit/output/client/logos/RocketLogo-nobg@0.5x.png, it is a binary file.
+.svelte-kit/output/client/logos/RocketLogo-purple@0.5x.png, it is a binary file.
+.svelte-kit/output/client/placeholders/100X125.gif, it is a binary file.
+.svelte-kit/output/client/placeholders/1920x500.gif, it is a binary file.
+.svelte-kit/output/client/placeholders/400X200.gif, it is a binary file.
+.svelte-kit/output/client/placeholders/40X40.gif, it is a binary file.
+.svelte-kit/output/client/placeholders/minecraft.jpg, it is a binary file.
+.svelte-kit/output/server/_app/immutable/assets/_layout.1c065b90.css, code is 1, comment is 0, blank is 0.
+.svelte-kit/output/server/_app/immutable/assets/_page.5b24f7c3.css, code is 1, comment is 0, blank is 0.
+.svelte-kit/output/server/chunks/internal.js, code is 178, comment is 1, blank is 6.
+.svelte-kit/output/server/chunks/ssr.js, code is 47, comment is 0, blank is 0.
+.svelte-kit/output/server/entries/fallbacks/error.svelte.js, code is 28, comment is 3, blank is 0.
+.svelte-kit/output/server/entries/pages/_layout.svelte.js, code is 22, comment is 0, blank is 0.
+.svelte-kit/output/server/entries/pages/_page.svelte.js, code is 125, comment is 0, blank is 0.
+.svelte-kit/output/server/index.js, code is 2751, comment is 147, blank is 19.
+.svelte-kit/output/server/internal.js, code is 9, comment is 0, blank is 0.
+.svelte-kit/output/server/manifest-full.js, code is 32, comment is 0, blank is 2.
+.svelte-kit/output/server/manifest.js, code is 32, comment is 0, blank is 2.
+.svelte-kit/output/server/nodes/0.js, code is 6, comment is 0, blank is 2.
+.svelte-kit/output/server/nodes/1.js, code is 6, comment is 0, blank is 2.
+.svelte-kit/output/server/nodes/2.js, code is 6, comment is 0, blank is 2.
+.svelte-kit/tsconfig.json, code is 39, comment is 0, blank is 6.
+.svelte-kit/types/route_meta_data.json, code is 16, comment is 0, blank is 6.
+.svelte-kit/types/src/routes/$types.d.ts, code is 18, comment is 0, blank is 2.
+.svelte-kit/types/src/routes/admin/$types.d.ts, code is 13, comment is 0, blank is 2.
+.svelte-kit/types/src/routes/admin/api/$types.d.ts, code is 20, comment is 0, blank is 2.
+.svelte-kit/types/src/routes/admin/api/authorization/$types.d.ts, code is 6, comment is 0, blank is 2.
+.svelte-kit/types/src/routes/admin/api/authorization/compare-authorization/$types.d.ts, code is 6, comment is 0, blank is 2.
+.svelte-kit/types/src/routes/admin/api/enable/$types.d.ts, code is 6, comment is 0, blank is 2.
+.svelte-kit/types/src/routes/admin/hub/$types.d.ts, code is 20, comment is 0, blank is 2.
+.svelte-kit/types/src/routes/api/games/$types.d.ts, code is 6, comment is 0, blank is 2.
+.svelte-kit/types/src/routes/components/home/$types.d.ts, code is 6, comment is 0, blank is 2.
+.svelte-kit/types/src/routes/mirrors/$types.d.ts, code is 20, comment is 0, blank is 2.
+package-lock.json, code is 1653, comment is 0, blank is 45.
+package.json, code is 25, comment is 0, blank is 0.
+README.md, code is 12, comment is 1, blank is 7.
+src/app.html, code is 12, comment is 0, blank is 0.
+src/lib/authUtils.js, code is 49, comment is 9, blank is 20.
+src/lib/db.js, code is 106, comment is 2, blank is 15.
+src/lib/index.js, code is 0, comment is 1, blank is 0.
+src/lib/stores.js, code is 2, comment is 1, blank is 0.
+src/routes/+error.svelte, code is 46, comment is 0, blank is 15.
+src/routes/+layout.svelte, code is 76, comment is 1, blank is 18.
+src/routes/+page.svelte, code is 9, comment is 0, blank is 2.
+src/routes/admin/+page.svelte, code is 140, comment is 8, blank is 23.
+src/routes/admin/api/authorization/+server.js, code is 27, comment is 10, blank is 10.
+src/routes/admin/api/authorization/compare-authorization/+server.js, code is 19, comment is 1, blank is 9.
+src/routes/admin/api/enable/+server.js, code is 45, comment is 0, blank is 8.
+src/routes/admin/hub/+page.server.js, code is 15, comment is 2, blank is 5.
+src/routes/admin/hub/+page.svelte, code is 228, comment is 7, blank is 49.
+src/routes/api/games/+server.js, code is 39, comment is 4, blank is 10.
+src/routes/components/home/carousel.svelte, code is 216, comment is 4, blank is 40.
+src/routes/components/home/catalog.svelte, code is 219, comment is 8, blank is 60.
+src/routes/components/home/footer.svelte, code is 85, comment is 0, blank is 14.
+src/routes/mirrors/+page.server.js, code is 28, comment is 0, blank is 6.
+src/routes/mirrors/+page.svelte, code is 68, comment is 0, blank is 25.
+static/assets/search-icon.png, it is a binary file.
+static/banners/default-banner.jpg, it is a binary file.
+static/banners/PhysicsChatAd.png, it is a binary file.
+static/banners/RocketBanner1@2.5x.png, it is a binary file.
+static/banners/RocketBanner1@2x.png, it is a binary file.
+static/banners/RocketBanner1@3x.png, it is a binary file.
+static/banners/RocketBanner2@2.5x.png, it is a binary file.
+static/banners/RocketBanner2@3x.png, it is a binary file.
+static/banners/RocketBanner3@2.5x.png, it is a binary file.
+static/banners/RocketBanner3@3x.png, it is a binary file.
+static/css/global.css, code is 6, comment is 0, blank is 0.
+static/favicon.png, it is a binary file.
+static/game_images/age-of-war.jpeg, it is a binary file.
+static/game_images/basketball-stars.jpeg, it is a binary file.
+static/game_images/color-road.jpg, it is a binary file.
+static/game_images/fbwg1.jpeg, it is a binary file.
+static/game_images/fbwg2.jpeg, it is a binary file.
+static/game_images/fbwg3.jpeg, it is a binary file.
+static/game_images/fbwg4.jpeg, it is a binary file.
+static/game_images/fbwg5.jpeg, it is a binary file.
+static/game_images/fbwg6.jpeg, it is a binary file.
+static/game_images/fruit-ninja.jpeg, it is a binary file.
+static/game_images/happywheels.jpeg, it is a binary file.
+static/game_images/lol.png, it is a binary file.
+static/game_images/madalin.jpeg, it is a binary file.
+static/game_images/moto-x3m-bike-race.jpeg, it is a binary file.
+static/game_images/nebula.jpeg, it is a binary file.
+static/game_images/paperio-2.jpeg, it is a binary file.
+static/game_images/resized_appImage_2048.gif, it is a binary file.
+static/game_images/resized_appImage_Axis-Football-League.png, it is a binary file.
+static/game_images/resized_appImage_Cat-Ninja.jpeg, it is a binary file.
+static/game_images/resized_appImage_chess.png, it is a binary file.
+static/game_images/resized_appImage_clay-scape.png, it is a binary file.
+static/game_images/resized_appImage_Cookie-Clicker.png, it is a binary file.
+static/game_images/resized_appImage_cursed-to-golf.jpeg, it is a binary file.
+static/game_images/resized_appImage_drift-hunters.png, it is a binary file.
+static/game_images/resized_appImage_Friday-Night-Funkin.jpg, it is a binary file.
+static/game_images/resized_appImage_Geometry-Dash.png, it is a binary file.
+static/game_images/resized_appImage_HexGL-master.jpeg, it is a binary file.
+static/game_images/resized_appImage_Mario-Vs-Luigi.png, it is a binary file.
+static/game_images/resized_appImage_Minecraft.png, it is a binary file.
+static/game_images/resized_appImage_narrow-one.png, it is a binary file.
+static/game_images/resized_appImage_picohot.png, it is a binary file.
+static/game_images/resized_appImage_retrobowl.jpeg, it is a binary file.
+static/game_images/resized_appImage_Shell-Shockers.jpeg, it is a binary file.
+static/game_images/resized_appImage_Slope.png, it is a binary file.
+static/game_images/resized_appImage_Super-Mario-64.png, it is a binary file.
+static/game_images/resized_appImage_tanuki-sunset.webp, it is a binary file.
+static/game_images/resized_appImage_tenjutsu.png, it is a binary file.
+static/game_images/resized_appImage_thwack.png, it is a binary file.
+static/game_images/resized_appImage_Ultraviolet.png, it is a binary file.
+static/game_images/run-3.png, it is a binary file.
+static/game_images/snowball-io.png, it is a binary file.
+static/game_images/snowball-racing.jpeg, it is a binary file.
+static/game_images/stick-duel-the-war.jpeg, it is a binary file.
+static/game_images/subway-surfers.png, it is a binary file.
+static/game_images/traffic-jam-3d.jpeg, it is a binary file.
+static/game_images/vex-3.jpeg, it is a binary file.
+static/logos/RocketLogo-nobg@0.5x.png, it is a binary file.
+static/logos/RocketLogo-purple@0.5x.png, it is a binary file.
+static/placeholders/100X125.gif, it is a binary file.
+static/placeholders/1920x500.gif, it is a binary file.
+static/placeholders/400X200.gif, it is a binary file.
+static/placeholders/40X40.gif, it is a binary file.
+static/placeholders/minecraft.jpg, it is a binary file.
+svelte.config.js, code is 7, comment is 4, blank is 2.
+vite.config.js, code is 5, comment is 0, blank is 1.
+===============================================================================

@@ -2,26 +2,20 @@
 <script>
 
     import { onMount } from "svelte";
-    //get all game info from the server
-
-    function sortGamesByVisits() {
-        games.sort(function(a, b) {
-            return b.visits - a.visits;
-        });
-    }
+    import { browser } from "$app/environment";
 
     //get games from /api/games
-     let games = [];
+    let games = [];
+        
+
+
     onMount(async () => {
-        const res = await fetch("/api/games");
+
+        const res = await fetch("/api/games?sort=visits");
         const fetchedGames = await res.json();
-        games = [...fetchedGames]; // This will trigger Svelte's reactivity
-        sortGamesByVisits();
+        games = fetchedGames;
+        sortedGames = games;
     });
-
-
-    
-
 
     let searchTerm = "";
     let sortedGames = [];
@@ -36,20 +30,34 @@
     }
 
 
-    function sortGames() {
+    async function sortGames() {
     if (selectedFilter == "visits") {
-        sortedGames = sortedGames.sort((a, b) => b.Visits - a.Visits);
+        if(browser){
+            const res = await fetch("/api/games?sort=visits");
+            const fetchedGames = await res.json();
+            sortedGames = fetchedGames;
+            console.log(sortedGames);
+        }
     } else if (selectedFilter == "alphabetical") {
-        sortedGames = sortedGames.sort((a, b) => a.Name.localeCompare(b.Name));
-    } else if (selectedFilter == "newest") {
-        //sortedGames.sort((a, b) => new Date(b["Date Added"]) - new Date(a.dateAdded));
-    } else if (selectedFilter == "oldest") {
-        // Assuming you have a 'dateAdded' property in your games data
-        // sortedGames.sort((a, b) => new Date(a.dateAdded) - new Date(b.dateAdded));
-    } else {
+        if(browser){
+            const res = await fetch("/api/games?sort=alphabetical");
+            const fetchedGames = await res.json();
+            sortedGames = fetchedGames;
+            console.log(sortedGames);
+        }
+    } else if (selectedFilter == "date") {
+        if(browser){
+            const res = await fetch("/api/games?sort=dateAdded");
+            const fetchedGames = await res.json();
+            sortedGames = fetchedGames;
+            console.log(sortedGames);
+        }
+    }
+     else {
         console.error("Invalid filter selected");
     }
 }
+
 
     $: selectedFilter, sortGames();
     let selectedFilter = "visits"; // default sort by visits
@@ -71,8 +79,8 @@
             <select bind:value={selectedFilter}>
                 <option value="visits">Most Popular</option>
                 <option value="alphabetical">Alphabetical</option>
-                <option value="newest">Newest</option>
-                <option value="oldest">Oldest</option>
+                <option value="date">Date Added</option>
+
             </select>
         </div>
     
@@ -85,7 +93,7 @@
     <div class="games-catalog">
         {#each sortedGames as game}
         <div class="game-card">
-            <img src={"https://physics-central.com" + game.Image} alt={game.Name} class="game-image">
+            <img src={game.Image} alt={game.Name} class="game-image">
             <h2 class="game-title">{game.Name}</h2>
             <a href={`#${game.ID}`} class="game-play-button">Play</a>
         </div>

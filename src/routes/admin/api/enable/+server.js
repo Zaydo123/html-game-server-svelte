@@ -1,10 +1,20 @@
 import { db } from '$lib/db.js';
 import { json } from '@sveltejs/kit';
+import { adminAuthCookie } from '$lib/stores';
+import { verifySessionCookie } from '$lib/authUtils';
 
-export async function POST(request) {
+export async function POST({request}) {
 
+    if (!verifySessionCookie(request)) {
+        return json({
+            status: 401,
+            body: {
+                message: 'Unauthorized!'
+            }
+        });
+    }
+    
     const ID = request.url.searchParams.get('id');
-    console.log('ID:', ID);
 
     if (!ID) {
         return json({
@@ -16,8 +26,6 @@ export async function POST(request) {
     }
 
     const success = db.toggleGameEnabled(ID);
-
-    console.log('Game status updated successfully!');
 
     if (success) {
         return json({
@@ -42,3 +50,4 @@ export async function POST(request) {
     });
 
 }
+

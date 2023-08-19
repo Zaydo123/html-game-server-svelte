@@ -2,15 +2,32 @@
 <!-- link stylesheet global -->
 <link rel='stylesheet' href='/css/global.css' />
 <script>
+
+    import { browser } from '$app/environment';
+    import GameEditor from './components/gameEditor.svelte';
+    
     export let data = [];
-    const { games } = data;
+    let { games } = data;
+
+    if(browser){
+        if( games[0] == "Not Authenticated") {
+            window.location.href = './';
+            console.log('redirecting');
+        } else {
+            console.log('logged in');
+        }
+    }
+
+    if( games == undefined ) {
+        games = [];
+    }
 
 
     async function toggleGameEnabled(game) {
         try {
             // make a request to the api to toggle the game's status
             const res = await fetch(`api/enable?id=${game.ID}`, {
-                method: 'POST',
+                method: 'POST'
             });
     
             // if successful, update the games list
@@ -79,6 +96,18 @@
             <p>{game.Visits}</p>
         </div>
 
+        <div class="edit-button">
+           <!--popup gameeditor when button is clicked  -->
+            <button on:click={() => {
+                const editor = new GameEditor({
+                    target: document.body,
+                    props: {
+                        game
+                    }
+                });
+            }}>Edit</button>
+        </div>
+
         <div class="checkbox-con">
             {#if game.Enabled == 1}
                 <input id="checkbox-{game.ID}" type="checkbox" checked on:click={() => toggleGameEnabled(game)} />
@@ -93,7 +122,7 @@
 
 
 <style>
-    
+
     .admin-hub-title {
         display: flex;
         flex-direction: row;

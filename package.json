@@ -15,10 +15,12 @@
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.10.1",
 		"svelte": "^4.0.5",
-		"vite": "^4.4.2"
+		"vite": "^4.4.9"
 	},
 	"type": "module",
 	"dependencies": {
-		"mariadb": "^3.2.0"
+		"bcrypt": "^5.1.1",
+		"mariadb": "^3.2.0",
+		"multer": "^1.4.5-lts.1"
 	}
 }

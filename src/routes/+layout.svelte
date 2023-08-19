@@ -27,7 +27,7 @@ $: websiteWidth, updateTitle();
       <li>
         <img
           id="logo"
-          src="/logos/RocketLogo-nobg@0.5x.png"
+          src="/images/logos/RocketLogo-nobg@0.5x.png"
           alt="logo"
           href="index.html"
         />
