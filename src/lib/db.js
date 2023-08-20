@@ -25,9 +25,12 @@ class database{
             return rows;
         }
         catch (err) {
+            console.log("Error");
+            console.log(err);
             throw err;
         }
         finally {
+            console.log("Fn closed");
             if (conn) return conn.end();
         }
     }
