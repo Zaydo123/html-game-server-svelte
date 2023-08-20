@@ -1,3 +1,14 @@
+# html-game-server-svelte
+
+ <p>
+    Hi! I'm attempting to completely rewrite https://github.com/Zaydo123/html-game-server but in svelte. 
+ </p>
+
+ <p>
+    This is a learning project for svelte, although I do plan on pushing this project to production soon
+ </p>
+
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
