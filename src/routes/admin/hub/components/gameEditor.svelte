@@ -10,8 +10,9 @@
 
     async function updateGame() {
         const formData = new FormData();
+        formData.append('id', game.ID);
         formData.append('name', game.Name);
-        formData.append('dateAdded', game.DateAdded);
+        formData.append("dateAdded", game['Date Added']);
         formData.append('visits', game.Visits);
         formData.append('gamedistribution', game.gamedistribution);
         formData.append('extra', game.Extra);
@@ -31,7 +32,7 @@
             }
         });
 
-        const result = await response.json();
+        const result = await response;
         console.log(result);
     }
 
@@ -65,22 +66,22 @@
 
     <div class="game-editor__date-added">
         <p>Date Added</p>
-        <input type="date" name="date-added" id="date-added" value="{game.DateAdded}">
+        <input type="date" name="date-added" id="date-added" bind:value={game['Date Added']}>
     </div>
 
     <div class="game-editor__visits">
         <p>Visits</p>
-        <input type="number" name="visits" id="visits" value="{game.Visits}">
+        <input type="number" name="visits" id="visits" bind:value="{game.Visits}">
     </div>
 
     <div class="game-editor__gamedistribution">
         <p>Game Distribution Code</p>
-        <input type="text" name="gamedistribution" id="gamedistribution" value="{game.gamedistribution}">
+        <input type="text" name="gamedistribution" id="gamedistribution" bind:value="{game.gamedistribution}">
     </div>
 
     <div class="game-editor__extra">
         <p>Extra</p>
-        <textarea name="extra" id="extra" cols="30" rows="10">{game.Extra}</textarea>
+        <textarea name="extra" id="extra" cols="30" rows="10" bind:value="{game.Extra}"></textarea>
     </div>
 
     <div class="game-editor__enabled">
@@ -93,7 +94,6 @@
     </div>
 </div>
 {/if}
-
 
 <style>
 
