@@ -1495,6 +1495,1517 @@
                     "filename": "vite.config.js"
                 }
             ]
+        },
+        {
+            "version": "0.2.7",
+            "counttime": "2023-08-19 04:10:18",
+            "filesum": 221,
+            "codesum": 7297,
+            "commentsum": 287,
+            "blanksum": 545,
+            "statistics": {
+                ".js": {
+                    "code": 3709,
+                    "comment": 201,
+                    "blank": 148
+                },
+                ".svelte": {
+                    "code": 1323,
+                    "comment": 31,
+                    "blank": 298
+                },
+                ".example": {
+                    "code": 12,
+                    "comment": 0,
+                    "blank": 2
+                },
+                ".json": {
+                    "code": 1889,
+                    "comment": 0,
+                    "blank": 59
+                },
+                ".html": {
+                    "code": 12,
+                    "comment": 0,
+                    "blank": 0
+                },
+                "": {
+                    "code": 46,
+                    "comment": 0,
+                    "blank": 1
+                },
+                ".ts": {
+                    "code": 276,
+                    "comment": 54,
+                    "blank": 30
+                },
+                ".md": {
+                    "code": 12,
+                    "comment": 1,
+                    "blank": 7
+                },
+                ".css": {
+                    "code": 18,
+                    "comment": 0,
+                    "blank": 0
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 0,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": ".env"
+                },
+                {
+                    "blank": 2,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": ".env.example"
+                },
+                {
+                    "blank": 0,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": ".gitignore"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": ".npmrc"
+                },
+                {
+                    "blank": 1,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": ".prettierignore"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": ".prettierrc"
+                },
+                {
+                    "blank": 8,
+                    "code": 149,
+                    "comment": 54,
+                    "filename": ".svelte-kit/ambient.d.ts"
+                },
+                {
+                    "blank": 5,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": ".svelte-kit/generated/client-optimized/app.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/generated/client-optimized/matchers.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/generated/client-optimized/nodes/0.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/generated/client-optimized/nodes/1.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/generated/client-optimized/nodes/2.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": ".svelte-kit/generated/client/app.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/generated/client/matchers.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/generated/client/nodes/0.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/generated/client/nodes/1.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/generated/client/nodes/2.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/generated/client/nodes/3.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/generated/client/nodes/4.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/generated/client/nodes/5.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/generated/client/nodes/6.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/generated/client/nodes/7.js"
+                },
+                {
+                    "blank": 9,
+                    "code": 46,
+                    "comment": 1,
+                    "filename": ".svelte-kit/generated/root.svelte"
+                },
+                {
+                    "blank": 4,
+                    "code": 26,
+                    "comment": 1,
+                    "filename": ".svelte-kit/generated/server/internal.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/output/client/_app/immutable/assets/0.1c065b90.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/output/client/_app/immutable/assets/2.6a0c59ad.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/output/client/_app/immutable/assets/_layout.1c065b90.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/output/client/_app/immutable/assets/_page.5b24f7c3.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/output/client/_app/immutable/chunks/index.c152eccd.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/output/client/_app/immutable/chunks/scheduler.6b5a33ca.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/output/client/_app/immutable/chunks/singletons.4a9b55ef.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/output/client/_app/immutable/entry/app.6ac99b2e.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 1,
+                    "filename": ".svelte-kit/output/client/_app/immutable/entry/start.cd2870dd.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/output/client/_app/immutable/nodes/0.c7c519ad.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/output/client/_app/immutable/nodes/1.fdb3c55d.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/output/client/_app/immutable/nodes/2.14014b9b.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/output/client/_app/version.json"
+                },
+                {
+                    "filename": ".svelte-kit/output/client/assets/search-icon.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/banners/default-banner.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/banners/PhysicsChatAd.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/banners/RocketBanner1@2.5x.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/banners/RocketBanner1@2x.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/banners/RocketBanner1@3x.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/banners/RocketBanner2@2.5x.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/banners/RocketBanner2@3x.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/banners/RocketBanner3@2.5x.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/banners/RocketBanner3@3x.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": ".svelte-kit/output/client/css/global.css"
+                },
+                {
+                    "filename": ".svelte-kit/output/client/favicon.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/age-of-war.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/basketball-stars.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/color-road.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/fbwg1.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/fbwg2.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/fbwg3.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/fbwg4.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/fbwg5.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/fbwg6.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/fruit-ninja.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/happywheels.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/lol.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/madalin.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/moto-x3m-bike-race.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/nebula.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/paperio-2.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/resized_appImage_2048.gif",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/resized_appImage_Axis-Football-League.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/resized_appImage_Cat-Ninja.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/resized_appImage_chess.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/resized_appImage_clay-scape.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/resized_appImage_Cookie-Clicker.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/resized_appImage_cursed-to-golf.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/resized_appImage_drift-hunters.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/resized_appImage_Friday-Night-Funkin.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/resized_appImage_Geometry-Dash.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/resized_appImage_HexGL-master.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/resized_appImage_Mario-Vs-Luigi.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/resized_appImage_Minecraft.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/resized_appImage_narrow-one.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/resized_appImage_picohot.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/resized_appImage_retrobowl.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/resized_appImage_Shell-Shockers.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/resized_appImage_Slope.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/resized_appImage_Super-Mario-64.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/resized_appImage_tanuki-sunset.webp",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/resized_appImage_tenjutsu.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/resized_appImage_thwack.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/resized_appImage_Ultraviolet.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/run-3.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/snowball-io.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/snowball-racing.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/stick-duel-the-war.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/subway-surfers.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/traffic-jam-3d.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/game_images/vex-3.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/logos/RocketLogo-nobg@0.5x.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/logos/RocketLogo-purple@0.5x.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/placeholders/100X125.gif",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/placeholders/1920x500.gif",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/placeholders/400X200.gif",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/placeholders/40X40.gif",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".svelte-kit/output/client/placeholders/minecraft.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/output/server/_app/immutable/assets/_layout.1c065b90.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".svelte-kit/output/server/_app/immutable/assets/_page.5b24f7c3.css"
+                },
+                {
+                    "blank": 6,
+                    "code": 178,
+                    "comment": 1,
+                    "filename": ".svelte-kit/output/server/chunks/internal.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 47,
+                    "comment": 0,
+                    "filename": ".svelte-kit/output/server/chunks/ssr.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 28,
+                    "comment": 3,
+                    "filename": ".svelte-kit/output/server/entries/fallbacks/error.svelte.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 22,
+                    "comment": 0,
+                    "filename": ".svelte-kit/output/server/entries/pages/_layout.svelte.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 125,
+                    "comment": 0,
+                    "filename": ".svelte-kit/output/server/entries/pages/_page.svelte.js"
+                },
+                {
+                    "blank": 19,
+                    "code": 2751,
+                    "comment": 147,
+                    "filename": ".svelte-kit/output/server/index.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": ".svelte-kit/output/server/internal.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 32,
+                    "comment": 0,
+                    "filename": ".svelte-kit/output/server/manifest-full.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 32,
+                    "comment": 0,
+                    "filename": ".svelte-kit/output/server/manifest.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": ".svelte-kit/output/server/nodes/0.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": ".svelte-kit/output/server/nodes/1.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": ".svelte-kit/output/server/nodes/2.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 39,
+                    "comment": 0,
+                    "filename": ".svelte-kit/tsconfig.json"
+                },
+                {
+                    "blank": 7,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": ".svelte-kit/types/route_meta_data.json"
+                },
+                {
+                    "blank": 2,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": ".svelte-kit/types/src/routes/$types.d.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": ".svelte-kit/types/src/routes/admin/$types.d.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": ".svelte-kit/types/src/routes/admin/api/$types.d.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": ".svelte-kit/types/src/routes/admin/api/authorization/$types.d.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": ".svelte-kit/types/src/routes/admin/api/authorization/compare-authorization/$types.d.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": ".svelte-kit/types/src/routes/admin/api/enable/$types.d.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": ".svelte-kit/types/src/routes/admin/api/updateGame/$types.d.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": ".svelte-kit/types/src/routes/admin/hub/$types.d.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": ".svelte-kit/types/src/routes/api/games/$types.d.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": ".svelte-kit/types/src/routes/components/home/$types.d.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": ".svelte-kit/types/src/routes/mirrors/$types.d.ts"
+                },
+                {
+                    "blank": 46,
+                    "code": 1805,
+                    "comment": 0,
+                    "filename": "package-lock.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 26,
+                    "comment": 0,
+                    "filename": "package.json"
+                },
+                {
+                    "blank": 7,
+                    "code": 12,
+                    "comment": 1,
+                    "filename": "README.md"
+                },
+                {
+                    "blank": 0,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "src/app.html"
+                },
+                {
+                    "blank": 20,
+                    "code": 47,
+                    "comment": 9,
+                    "filename": "src/lib/authUtils.js"
+                },
+                {
+                    "blank": 15,
+                    "code": 109,
+                    "comment": 2,
+                    "filename": "src/lib/db.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 1,
+                    "filename": "src/lib/index.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 1,
+                    "filename": "src/lib/stores.js"
+                },
+                {
+                    "blank": 15,
+                    "code": 46,
+                    "comment": 0,
+                    "filename": "src/routes/+error.svelte"
+                },
+                {
+                    "blank": 18,
+                    "code": 76,
+                    "comment": 1,
+                    "filename": "src/routes/+layout.svelte"
+                },
+                {
+                    "blank": 2,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "src/routes/+page.svelte"
+                },
+                {
+                    "blank": 23,
+                    "code": 140,
+                    "comment": 8,
+                    "filename": "src/routes/admin/+page.svelte"
+                },
+                {
+                    "blank": 10,
+                    "code": 27,
+                    "comment": 10,
+                    "filename": "src/routes/admin/api/authorization/+server.js"
+                },
+                {
+                    "blank": 9,
+                    "code": 19,
+                    "comment": 1,
+                    "filename": "src/routes/admin/api/authorization/compare-authorization/+server.js"
+                },
+                {
+                    "blank": 8,
+                    "code": 45,
+                    "comment": 0,
+                    "filename": "src/routes/admin/api/enable/+server.js"
+                },
+                {
+                    "blank": 12,
+                    "code": 37,
+                    "comment": 13,
+                    "filename": "src/routes/admin/api/updateGame/+server.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 19,
+                    "comment": 3,
+                    "filename": "src/routes/admin/hub/+page.server.js"
+                },
+                {
+                    "blank": 52,
+                    "code": 249,
+                    "comment": 7,
+                    "filename": "src/routes/admin/hub/+page.svelte"
+                },
+                {
+                    "blank": 36,
+                    "code": 169,
+                    "comment": 2,
+                    "filename": "src/routes/admin/hub/components/gameEditor.svelte"
+                },
+                {
+                    "blank": 10,
+                    "code": 39,
+                    "comment": 4,
+                    "filename": "src/routes/api/games/+server.js"
+                },
+                {
+                    "blank": 40,
+                    "code": 216,
+                    "comment": 4,
+                    "filename": "src/routes/components/home/carousel.svelte"
+                },
+                {
+                    "blank": 64,
+                    "code": 219,
+                    "comment": 8,
+                    "filename": "src/routes/components/home/catalog.svelte"
+                },
+                {
+                    "blank": 14,
+                    "code": 85,
+                    "comment": 0,
+                    "filename": "src/routes/components/home/footer.svelte"
+                },
+                {
+                    "blank": 6,
+                    "code": 28,
+                    "comment": 0,
+                    "filename": "src/routes/mirrors/+page.server.js"
+                },
+                {
+                    "blank": 25,
+                    "code": 68,
+                    "comment": 0,
+                    "filename": "src/routes/mirrors/+page.svelte"
+                },
+                {
+                    "filename": "static/assets/search-icon.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "static/css/global.css"
+                },
+                {
+                    "filename": "static/favicon.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/banners/default-banner.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/banners/PhysicsChatAd.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/banners/RocketBanner1@2.5x.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/banners/RocketBanner1@2x.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/banners/RocketBanner1@3x.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/banners/RocketBanner2@2.5x.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/banners/RocketBanner2@3x.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/banners/RocketBanner3@2.5x.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/banners/RocketBanner3@3x.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/age-of-war.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/basketball-stars.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/color-road.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/fbwg1.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/fbwg2.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/fbwg3.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/fbwg4.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/fbwg5.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/fbwg6.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/fruit-ninja.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/happywheels.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/lol.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/madalin.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/moto-x3m-bike-race.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/nebula.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/paperio-2.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/resized_appImage_2048.gif",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/resized_appImage_Axis-Football-League.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/resized_appImage_Cat-Ninja.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/resized_appImage_chess.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/resized_appImage_clay-scape.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/resized_appImage_Cookie-Clicker.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/resized_appImage_cursed-to-golf.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/resized_appImage_drift-hunters.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/resized_appImage_Friday-Night-Funkin.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/resized_appImage_Geometry-Dash.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/resized_appImage_HexGL-master.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/resized_appImage_Mario-Vs-Luigi.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/resized_appImage_Minecraft.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/resized_appImage_narrow-one.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/resized_appImage_picohot.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/resized_appImage_retrobowl.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/resized_appImage_Shell-Shockers.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/resized_appImage_Slope.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/resized_appImage_Super-Mario-64.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/resized_appImage_tanuki-sunset.webp",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/resized_appImage_tenjutsu.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/resized_appImage_thwack.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/resized_appImage_Ultraviolet.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/run-3.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/snowball-io.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/snowball-racing.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/stick-duel-the-war.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/subway-surfers.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/traffic-jam-3d.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/game_images/vex-3.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/logos/RocketLogo-nobg@0.5x.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/logos/RocketLogo-purple@0.5x.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/placeholders/100X125.gif",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/placeholders/1920x500.gif",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/placeholders/400X200.gif",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/placeholders/40X40.gif",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "static/images/placeholders/minecraft.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 2,
+                    "code": 7,
+                    "comment": 4,
+                    "filename": "svelte.config.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "vite.config.js"
+                }
+            ]
         }
     ]
 }
