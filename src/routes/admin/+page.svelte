@@ -8,7 +8,7 @@
   
   //send request to /authorization/compare-authorization to see if already logged in 
     onMount(async () => {
-        const response = await fetch('/admin/api/authorization/compare-authorization', {
+        const response = await fetch('/api/admin/authorization/compare-authorization', {
             method: 'POST'
         });
     
@@ -23,7 +23,7 @@
 
 
   async function handleLogin() {
-      const response = await fetch('/admin/api/authorization', {
+      const response = await fetch('/api/admin/authorization', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json'
