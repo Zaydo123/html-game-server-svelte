@@ -2,15 +2,15 @@
 <!-- link stylesheet global -->
 <link rel='stylesheet' href='/css/global.css' />
 <script>
-
     import { browser } from '$app/environment';
     import GameEditor from './components/gameEditor.svelte';
+    import CreateGame from './components/createGame.svelte';
     
     export let data = [];
     let { games } = data;
 
     if(browser){
-        if( games[0] == "Not Authenticated") {
+        if(games[0] == "Not Authenticated") {
             window.location.href = './';
             console.log('redirecting');
         } else {
@@ -18,34 +18,26 @@
         }
     }
 
-    if( games == undefined ) {
+    if(games == undefined) {
         games = [];
     }
 
-
     async function toggleGameEnabled(game) {
         try {
-            // make a request to the api to toggle the game's status
-            const res = await fetch(`api/enable?id=${game.ID}`, {
+            const res = await fetch(`/api/admin/enable?id=${game.ID}`, {
                 method: 'POST'
             });
     
-            // if successful, update the games list
             if (res.status === 200) {
                 const newGames = games.map(g => {
-                    // if the game is the one we're updating, toggle its status
                     if (g.ID === game.ID) {
                         return {
                             ...g,
                             Enabled: game.Enabled === 1 ? 0 : 1
                         };
                     }
-
-                    // otherwise, return the original game
                     return g;
                 });
-
-                // set the new games list
                 data = {
                     ...data,
                     games: newGames
@@ -55,32 +47,73 @@
             console.log(e);
         }
     }
-    
 
+    async function searchGame(query) {
+        // send request to /api/games but add query of ?showDisabled as well
+        try {
+            const res = await fetch(`/api/games?search=${query}&showDisabled=true`);
+            const fetchedGames = await res.json();
+            games = fetchedGames;
+        } catch (e) {
+            console.log(e);
+        }
+
+    }
+
+    async function filterGames(method) {
+        // Implement the sorting/filtering mechanism and update the games variable here
+        // send request to /api/games with query of ?sort=method and ?showDisabled=true
+        try{
+            const res = await fetch(`/api/games?sort=${method}&showDisabled=true`);
+            const fetchedGames = await res.json();
+            games = fetchedGames;
+        } catch (e) {
+            console.log(e);
+        }
+
+    }
 </script>
-
 
 <h1 class="admin-hub-title">Admin Hub</h1>
 
+<div class="control-header">
+    <button class="new-game-button" on:click={ () => {
+        new CreateGame({
+            target: document.body,
+            props: {
+                game: {
+                    Name: "",
+                    Visits: 0,
+                    gamedistribution: "",
+                    Extra: "",
+                    Enabled: false
+                }
+            }
+        })
+    }
+}>+</button>
+<select name="sort" id="sort" on:change={(e) => filterGames(e.target.value)}>
+    <option value="ID">ID</option>
+    <option value="alphabetical">Title</option>
+    <option value="visits">Visits</option>
+    <option value="dateAdded">Date Added</option>
+</select>
+<p>OR</p>
+<input type="text" name="search" id="search" placeholder="Search...">
+<button id="search-button" on:click={() => searchGame(document.getElementById('search').value)}>Search</button>
+</div>
 
 <div class="game-list-header">
-    <!-- id name and visits header -->
     <div class="game-list-header__id">
         <h4>ID</h4>
     </div>
-
-    <div class="group-title">
-
-        <div class="game-list-header__title">
-            <h4>Title</h4>
-        </div>
-        <div class="game-list-header__visits">
-            <h4>Visits</h4>
-        </div>
-
+    <div class="game-list-header__title">
+        <h4>Title</h4>
+    </div>
+    <div class="game-list-header__visits">
+        <h4>Visits</h4>
     </div>
 </div>
-
 
 <div class="games">
 {#each games as game}
@@ -97,7 +130,6 @@
         </div>
 
         <div class="edit-button">
-           <!--popup gameeditor when button is clicked  -->
             <button on:click={() => {
                 const editor = new GameEditor({
                     target: document.body,
@@ -105,6 +137,10 @@
                         game
                     }
                 });
+                editor.$on('close', () => {
+                    editor.$destroy();
+                });
+                window.scrollTo(0, 0);
             }}>Edit</button>
         </div>
 
@@ -119,8 +155,6 @@
 {/each}
 </div>
 
-
-
 <style>
 
     .admin-hub-title {
@@ -134,6 +168,7 @@
         background: linear-gradient(135deg, #af40ff, #dbc0ee);
         margin: auto;
         margin-top: 20px;
+        color: white;
     }
 
     .game-list-header {
@@ -142,31 +177,22 @@
         align-items: left;
         width: 75%;
         height: 60px;
-        border-radius: 20px;
-        background-color: #3a3838;
+        border-radius: 10px;
+        padding: 8px;
+        background-color: #00000040;
         margin: auto;
         margin-top: 20px;
-
-    }
-
-    .group-title {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        width: 100%;
-        border-radius: 0px 20px 20px 0px;
-        border: #af40ff 2px solid;
+        color: white;
     }
 
     .game-list-header__id{
+        padding-left: 5px;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        width: 5%;
+        width: 10%;
         height: 60px;
-        border-radius: 20px 0px 0px 20px;
-        background: #504e4e;
     }
 
     .game-list-header__title {
@@ -176,7 +202,6 @@
         width: 80%;
         height: 100%;
         margin-left: 2%;
-        border-radius: 0px 20px 20px 0px;
     }
 
     .game-list-header__visits {
@@ -186,8 +211,7 @@
         justify-content: center;
         width: 15%;
         height: 100%;
-        border-radius: 0px 20px 20px 0px;
-        margin-right: 7%;
+        margin-right: 10%;
     }
 
 
@@ -205,10 +229,12 @@
         justify-content: center;
         width: 75%;
         height: 60px;
-        border-radius: 20px;
+        border-radius: 10px;
         /* shadow */
         box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-        background-color: #3a3838;
+        background-color: #9e818115;
+        padding: 5px;
+        color: white;
         margin: 10px;
     }
 
@@ -217,10 +243,12 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        width: 5%;
+        width: 10%;
         height: 100%;
-        border-radius: 20px 0px 0px 20px;
-        background: #504e4e;
+        padding: 5px;
+        margin-left: -5px;
+        border-radius: 10px 0px 0px 10px;
+        background: #5e35b1;
     }
 
     .game__title {
@@ -229,7 +257,6 @@
         width: 80%;
         height: 100%;
         margin-left: 2%;
-        border-radius: 0px 20px 20px 0px;
     }
 
     .game__visits {
@@ -239,7 +266,6 @@
         justify-content: center;
         width: 15%;
         height: 100%;
-        border-radius: 0px 20px 20px 0px;
     }
 
     /* checkbox */
@@ -301,6 +327,66 @@
         top: 5px;
         left: 5px;
        }
+
+    /* edit button */
+       
+    .edit-button button{
+         background-color: #5e35b1;
+         border: none;
+         color: white;
+         padding: 8px 15px;
+         text-align: center;
+         text-decoration: none;
+    }
+
+    .control-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: left;
+        width: 45%;
+        height: 60px;
+        border-radius: 10px;
+        background-color: #9e818115;
+        color: white;
+        margin-top: 20px;
+        margin-left: 5%;
+    }
+
+    .control-header input {
+        width: 20%;
+        height: 40%;
+        border-radius: 20px;
+        border: none;
+        margin: 10px;
+    }
+
+    .control-header button {
+        background-color: #5e35b1;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        margin: 10px;
+        border-radius: 0px;
+    }
+
+    .control-header select {
+        width: 20%;
+        height: 40%;
+        border-radius: 20px;
+        border: none;
+        margin: 10px;
+    }
+
+    #search {
+        padding-left: 8px;
+    }
+    #sort {
+        padding-left: 8px;
+    }
+
 
 
 </style>
