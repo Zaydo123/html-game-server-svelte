@@ -23,7 +23,7 @@
             formData.append('image', imageInput.files[0]);
         }
 
-        const response = await fetch('/admin/api/updateGame', {
+        const response = await fetch('/api/admin/updateGame', {
             method: 'POST',
             body: formData
         }, {
@@ -33,20 +33,18 @@
         });
 
         const result = await response;
-        console.log(result);
     }
 
     async function deleteGame() {
-        const response = await fetch('/admin/api/deleteGame', {
+        const response = await fetch('/api/admin/deleteGame', {
             method: 'POST',
-            body: JSON.stringify({ name: game.Name }),
+            body: JSON.stringify({ id: game.ID }),
             headers: {
                 'Content-Type': 'application/json'
             }
         });
 
-        const result = await response.json();
-        console.log(result);
+        const result = await response;
     }
 </script>
 
@@ -65,7 +63,8 @@
     </div>
 
     <div class="game-editor__date-added">
-        <p>Date Added</p>
+        <!-- shorten the date -->
+        <p>Date Added ({ game['Date Added'].toString().substring(0, 15) } )</p>
         <input type="date" name="date-added" id="date-added" bind:value={game['Date Added']}>
     </div>
 
