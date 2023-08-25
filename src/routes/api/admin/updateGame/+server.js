@@ -20,9 +20,10 @@ function formBody(body) {
 }
 
 function formatDateToSQL(dateString) {
-    const [year, month, day] = dateString.split("-");
-    return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+    const date = new Date(dateString);
+    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
 }
+
 
 export async function POST({ request }) {
     try {
