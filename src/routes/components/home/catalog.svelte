@@ -95,7 +95,7 @@
         <div class="game-card">
             <img src={game.Image} alt={game.Name} class="game-image">
             <h2 class="game-title">{game.Name}</h2>
-            <a href={`#${game.ID}`} class="game-play-button">Play</a>
+            <a href={`/play/${game.ID}`} class="game-play-button">Play</a>
         </div>
         {/each}
     </div>
