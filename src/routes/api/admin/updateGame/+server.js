@@ -1,5 +1,6 @@
 import { db } from '$lib/db';
 import { verifySessionCookie } from '$lib/authUtils';
+import {uploadFileToS3} from '$lib/cloudflareUtils';
 import fs from 'fs';
 import path from 'path';
 
@@ -38,7 +39,7 @@ export async function POST({ request }) {
         // Format the date to SQL format
         parsedData.dateAdded = formatDateToSQL(parsedData.dateAdded);
 
-        console.log('Parsed Data:', parsedData);
+        //console.log('Parsed Data:', parsedData);
 
         let queryParams = [parsedData.name, parsedData.dateAdded, parsedData.visits, parsedData.gamedistribution, parsedData.extra, parsedData.enabled, parsedData.id];
         let setImage = "";
@@ -46,11 +47,13 @@ export async function POST({ request }) {
         // Handle image upload only if a new image exists
         if (parsedData.image) {
             const file = parsedData.image;
-            const savePath = path.join(process.cwd(), 'static', 'images', 'game_images', file.name);
-            fs.writeFileSync(savePath, Buffer.from(await file.arrayBuffer()));
-            parsedData.image = `/images/game_images/${file.name}`;
+
+            // Upload the image to S3
+            const data = await uploadFileToS3(parsedData.id, Buffer.from(await file.arrayBuffer()),file);
+            let uploadResult = data.result;
+            let uploadURL = data.url;
             setImage = ", Image = ?";
-            queryParams.splice(1, 0, parsedData.image);  // Insert the image path at the correct position in the parameters array
+            queryParams.splice(1, 0, uploadURL);  // Insert the image path at the correct position in the parameters array
         }
 
         // Update the game data in the database

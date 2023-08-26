@@ -1,5 +1,6 @@
 import { db } from '$lib/db';
 import { verifySessionCookie } from '$lib/authUtils';
+import {uploadFileToS3} from '$lib/cloudflareUtils';
 import fs from 'fs';
 import path from 'path';
 
@@ -43,21 +44,41 @@ export async function POST({ request }) {
             parsedData.enabled = parsedData.enabled ? 1 : 0;
         }
 
-        // Handle image upload if it exists
-        if (parsedData.image) {
-            const file = parsedData.image;
-            const savePath = path.join(process.cwd(), 'static', 'images', 'game_images', file.name);
-            fs.writeFileSync(savePath, Buffer.from(await file.arrayBuffer()));
-            parsedData.image = `/images/game_images/${file.name}`;
-        }
-
+        
         // Insert the new game data into the database
         const result = await db.query(
-            "INSERT INTO games (Name, Image, `Date Added`, Visits, gamedistribution, Extra, Enabled) VALUES (?, ?, ?, ?, ?, ?, ?)",
-            [parsedData.name, parsedData.image, parsedData.dateAdded, parsedData.visits, parsedData.gamedistribution, parsedData.extra, parsedData.enabled]
-        );
+            "INSERT INTO games (Name, `Date Added`, Visits, gamedistribution, Extra, Enabled) VALUES (?, ?, ?, ?, ?, ?)",
+            [parsedData.name, parsedData.dateAdded, parsedData.visits, parsedData.gamedistribution, parsedData.extra, parsedData.enabled]
+            );
+            
+            // Handle image upload if it exists
+            if (parsedData.image) {
 
-        if (result && result.lastID) {
+                let id = result.insertId;
+                const file = parsedData.image;
+                const data = await uploadFileToS3(id, Buffer.from(await file.arrayBuffer()),file);
+                let uploadResult = data.result;
+                let uploadURL = data.url;
+                parsedData.image = uploadURL;
+                console.log('Upload URL:', parsedData.image);
+            }
+
+            //update to add image url
+            const updateResult = await db.update(
+                "UPDATE games SET Image = ? WHERE id = ?",
+                [parsedData.image, result.insertId]
+                );
+            
+            if(updateResult) {
+                console.log('Image URL updated');
+            } else {
+                console.log('Image URL not updated');
+            }
+
+
+
+        
+            if (result && result.lastID) {
             return new Response("Game Created", { status: 201, statusText: "Game Created" });
         } else {
             return new Response("Failed to Create Game", { status: 500, statusText: "Failed to Create Game" });

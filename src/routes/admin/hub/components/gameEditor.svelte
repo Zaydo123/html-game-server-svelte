@@ -53,7 +53,7 @@
     <div class="game-editor__cancel" on:click={closeEditor} on:keydown={closeEditor} role="button" tabindex="0">X</div>
 
     <div class="game-editor__image">
-        <img src={"../"+game.Image} alt={game.Name}>
+        <img src={game.Image} alt={game.Name}>
         <input type="file" name="image" id="image" accept="image/*">
     </div>
 
