@@ -19,10 +19,10 @@ class database{
 
     async query(sql, values) {
         let conn;
+        let rows = [];
         try {
             conn = await this.pool.getConnection();
-            const rows = await conn.query(sql, values);
-            return rows;
+            rows = await conn.query(sql, values);
         }
         catch (err) {
             console.log("Error");
@@ -30,8 +30,11 @@ class database{
             throw err;
         }
         finally {
-            console.log("Fn closed");
-            if (conn) return conn.end();
+            if (conn){
+                conn.end();
+            }
+            console.log(rows);
+            return rows;
         }
     }
 
@@ -49,7 +52,6 @@ class database{
         }
         finally {
             conn.end();
-            console.log("Connection closed");
         }
 
     }
@@ -81,7 +83,6 @@ class database{
             throw err;
         }
         finally {
-            console.log("Update Connection closed");
             if (conn) return conn.end();
         }
     }
