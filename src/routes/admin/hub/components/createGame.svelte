@@ -46,7 +46,13 @@
 
     <div class="game-editor__image">
         <img src={"/images/placeholders/400X200.gif"} alt={game.Name}>
+        <p>Image</p>
         <input type="file" name="image" id="image" accept="image/*">
+    </div>
+
+    <div class="game-editor-gameFiles">
+        <p>Game Files</p>
+        <input type="file" name="gameFiles" id="gameFiles" accept=".zip">
     </div>
 
     <div class="game-editor__title">
