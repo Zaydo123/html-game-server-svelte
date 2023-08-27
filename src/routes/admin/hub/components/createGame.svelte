@@ -2,7 +2,7 @@
     import { onMount } from "svelte";
 
     let game = {
-        ID: null, // No ID for a new game
+        ID: null,
         Name: "New Game",
         "Date Added": new Date().toISOString().substr(0,10),
         Visits: 0,
@@ -30,12 +30,19 @@
             formData.append('image', imageInput.files[0]);
         }
 
+        const gameFilesInput = document.getElementById('gameFiles');
+        for(let i=0; i<gameFilesInput.files.length; i++) {
+            const gameFilePath = gameFilesInput.files[i].webkitRelativePath || gameFilesInput.files[i].name;
+            formData.append('gameFiles', gameFilesInput.files[i]);
+            formData.append('gameFilesMetadata', gameFilePath); // Send the file's relative path as metadata
+        }
+
         const response = await fetch('/api/admin/createGame', {
             method: 'POST',
             body: formData
         });
 
-        const result = await response;
+        const result = await response.json();
         console.log(result);
     }
 </script>
@@ -52,12 +59,12 @@
 
     <div class="game-editor-gameFiles">
         <p>Game Files</p>
-        <input type="file" name="gameFiles" id="gameFiles" accept=".zip">
+        <input type="file" name="gameFiles" id="gameFiles" webkitdirectory mozdirectory/>
     </div>
 
     <div class="game-editor__title">
         <h1>{game.Name}</h1>
-        <input type="text" name="title" id="title" bind:value={game.Name}>
+        <input type="text" name="title" id="title" bind:value={game.Name}/>
     </div>
 
     <div class="game-editor__date-added">
@@ -98,8 +105,6 @@
 
 <style>
 
-
-
 .game-editor {
     position: absolute;
     top: 90%;
@@ -138,7 +143,7 @@
     background-color: #ddd;
 }
 
-.game-editor__image, .game-editor__title, .game-editor__date-added, .game-editor__visits, .game-editor__gamedistribution, .game-editor__extra, .game-editor__enabled {
+.game-editor__image, .game-editor__title, .game-editor__date-added, .game-editor__visits, .game-editor__gamedistribution, .game-editor__extra, .game-editor__enabled, .game-editor-gameFiles {
     width: 100%;
     margin-bottom: 15px;
     display: flex;

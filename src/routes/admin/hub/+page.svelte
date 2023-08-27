@@ -80,15 +80,6 @@
     <button class="new-game-button" on:click={ () => {
         new CreateGame({
             target: document.body,
-            props: {
-                game: {
-                    Name: "",
-                    Visits: 0,
-                    gamedistribution: "",
-                    Extra: "",
-                    Enabled: false
-                }
-            }
         })
     }
 }>+</button>

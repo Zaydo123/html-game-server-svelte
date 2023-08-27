@@ -16,9 +16,6 @@ async function newS3Client() {
 
 
 async function uploadFileToS3(directory, file, metadata) {
-
-
-
     const s3 = await newS3Client();
     const params = {
         Bucket: SECRET_CLOUDFLARE_BUCKET_NAME,
@@ -28,10 +25,10 @@ async function uploadFileToS3(directory, file, metadata) {
         ACL: 'public-read'
     };
 
-    console.log('S3 Params:', params);
     const command = new PutObjectCommand(params);
     let result = await s3.send(command);
     let url = `${SECRET_CLOUDFLARE_BUCKET_URL}/${SECRET_CLOUDFLARE_BUCKET_NAME}/${directory}/${metadata.name}`;
+    console.log('Uploaded file to S3:', url);
     return {"result": result, "url": url};
 }
 

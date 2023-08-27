@@ -1,6 +1,6 @@
 import { db } from '$lib/db';
 import { verifySessionCookie } from '$lib/authUtils';
-import {uploadFileToS3} from '$lib/cloudflareUtils';
+import { uploadFileToS3 } from '$lib/cloudflareUtils';
 import fs from 'fs';
 import path from 'path';
 
@@ -33,6 +33,8 @@ export async function POST({ request }) {
         }
 
         const values = await request.formData();
+
+        // For non-file data
         const parsedData = formBody(values);
 
         // Format the date to SQL format
@@ -44,41 +46,59 @@ export async function POST({ request }) {
             parsedData.enabled = parsedData.enabled ? 1 : 0;
         }
 
-        
         // Insert the new game data into the database
         const result = await db.query(
             "INSERT INTO games (Name, `Date Added`, Visits, gamedistribution, Extra, Enabled) VALUES (?, ?, ?, ?, ?, ?)",
             [parsedData.name, parsedData.dateAdded, parsedData.visits, parsedData.gamedistribution, parsedData.extra, parsedData.enabled]
-            );
-            
-            // Handle image upload if it exists
-            if (parsedData.image) {
+        );
 
-                let id = result.insertId;
-                const file = parsedData.image;
-                const data = await uploadFileToS3(id, Buffer.from(await file.arrayBuffer()),file);
-                let uploadResult = data.result;
-                let uploadURL = data.url;
-                parsedData.image = uploadURL;
-                console.log('Upload URL:', parsedData.image);
-            }
-
-            //update to add image url
-            const updateResult = await db.update(
-                "UPDATE games SET Image = ? WHERE id = ?",
-                [parsedData.image, result.insertId]
-                );
-            
-            if(updateResult) {
-                console.log('Image URL updated');
-            } else {
-                console.log('Image URL not updated');
-            }
+        // For file data
+        const gameFiles = values.getAll('gameFiles'); // This will be an array of files
+        const gameFilesMetadata = values.getAll('gameFilesMetadata'); // This will be an array of file paths
 
 
-
+        for(let i = 0; i < gameFiles.length; i++) {
+            const gameFile = gameFiles[i];
+            const metadata = gameFilesMetadata[i];
         
-            if (result && result.lastID) {
+            try {
+                console.log('Trying to upload game file:', gameFile.name);
+        
+                // Extract the directory without the filename
+                let directory = path.dirname(metadata); // Use Node's path module to get the directory
+                directory = result.insertId + (directory !== '.' ? '/' + directory : ''); // If directory is '.', it means there's no directory, just a filename
+        
+                console.log('Directory:', directory);
+                uploadFileToS3(directory, Buffer.from(await gameFile.arrayBuffer()), gameFile);
+            } catch (error) {
+                console.error('Error uploading game file:', error);
+            }
+        }
+
+        // Handle image upload if it exists
+        const imageFile = values.get('image');
+        if (imageFile) {
+            let id = result.insertId;
+            const data = await uploadFileToS3(id, Buffer.from(await imageFile.arrayBuffer()), imageFile);
+            let uploadResult = data.result;
+            let uploadURL = data.url;
+            parsedData.image = uploadURL;
+            console.log('Upload URL:', parsedData.image);
+        }
+
+        // Update to add image URL
+        const updateResult = await db.update(
+            "UPDATE games SET Image = ? WHERE id = ?",
+            [parsedData.image, result.insertId]
+        );
+
+        if(updateResult) {
+            console.log('Image URL updated');
+        } else {
+            console.log('Image URL not updated');
+        }
+
+        if (result && result.lastID) {
             return new Response("Game Created", { status: 201, statusText: "Game Created" });
         } else {
             return new Response("Failed to Create Game", { status: 500, statusText: "Failed to Create Game" });
