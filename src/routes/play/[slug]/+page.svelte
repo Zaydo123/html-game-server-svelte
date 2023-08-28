@@ -47,7 +47,7 @@
     }
 
     //make opacity 0 then fade in ease in 
-    if(game.gamedistribution!=null && game.gamedistribution.length>0){
+    if(game.gamedistribution!=null && game.gamedistribution.length>1){
       //for development convenience
       let currentURL = window.location.href;
       if(currentURL.includes("localhost")){
@@ -94,7 +94,7 @@
     
   
   
-    <iframe src={gameSRC} frameborder="5" allowfullscreen="true" allowtransparency="true" class="game-iframe" title="game-{game.ID}"></iframe>
+    <iframe src={gameSRC} frameborder="5" allowfullscreen="true" allowtransparency="true" class="game-iframe" title="game-{game.ID}" />
   
       {#if !isDevMode}
         <div class="game-ads right-ad">
