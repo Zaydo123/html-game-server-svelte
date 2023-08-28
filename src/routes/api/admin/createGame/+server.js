@@ -63,11 +63,11 @@ export async function POST({ request }) {
         
             try {
                 console.log('Trying to upload game file:', gameFile.name);
-        
-                // Extract the directory without the filename
-                let directory = path.dirname(metadata); // Use Node's path module to get the directory
-                directory = result.insertId + (directory !== '.' ? '/' + directory : ''); // If directory is '.', it means there's no directory, just a filename
-        
+                let directories = path.dirname(metadata).split(path.sep);
+                directories.shift(); // Remove the game name (e.g., "paperio-2")
+                let directory = directories.join(path.sep);
+                
+                directory = result.insertId + (directory ? '/' + directory : ''); 
                 console.log('Directory:', directory);
                 uploadFileToS3(directory, Buffer.from(await gameFile.arrayBuffer()), gameFile);
             } catch (error) {
