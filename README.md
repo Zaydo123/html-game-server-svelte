@@ -8,6 +8,14 @@
     This is a learning project for svelte, although I do plan on pushing this project to production soon
  </p>
 
+<h1> To Do: </h1>
+<p>Last updated 8/28</p>
+<ul>Request a game page </ul>
+<ul>Chromebook only mode?</ul>
+<ul>Ads.txt file</ul>
+<ul>Fix admin panel to be more responsive</ul>
+<ul>Sort by hottest games in past 24h</ul>
+
 
 # create-svelte
 
