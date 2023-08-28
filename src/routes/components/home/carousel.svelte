@@ -24,7 +24,8 @@
       {
         "title": "Request a game",
         "description": "Send us a suggestion. We'll try to make it happen.",
-        "image": "/images/banners/RocketBanner3@2.5x.png"
+        "image": "/images/banners/RocketBanner3@2.5x.png",
+        "href" : "/request"
       }
     ];
 
