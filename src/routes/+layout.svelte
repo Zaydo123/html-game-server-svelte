@@ -14,9 +14,6 @@ function updateTitle(){
 }
 $: websiteWidth, updateTitle();
 
-
-
-
 </script>
 
 <svelte:window bind:innerWidth={websiteWidth} />
@@ -45,12 +42,16 @@ $: websiteWidth, updateTitle();
       {/if}
       <li><a href="mailto:zayd@physics-central.com">Contact</a></li>
 
+        <a href="/settings" class="settings">
+          <!-- svg from /images/svg/settings-cog.svg -->
+            <img class="settings" src="/assets/settings-icon.png" alt="settings" />
+        </a>
+
       </ul>
 </nav>
 </header>
 
 <link rel="stylesheet" href="https://use.typekit.net/cir1tmq.css" />
-
 
 <style>
 header {
@@ -92,6 +93,14 @@ header nav a:hover {
   width: 50px;
   margin-right: 20px;
 }
+
+.settings {
+  margin-left: auto;
+  margin-right: 20px;
+  width: 40px;
+  fill: #fff;
+}
+
 
 </style>
 

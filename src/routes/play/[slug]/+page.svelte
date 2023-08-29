@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="/css/global.css" />
 <script>
   /** @type {import('./$types').PageData} */
+  import Title from "../../components/Title.svelte"
   import { browser } from '$app/environment';
   export let data;
   let game = data.props.game;
@@ -65,11 +66,11 @@
 
   }
 
-
-
-
-
 </script>
+
+<Title/>
+
+
 <div class="group">
 
   <div class="iframe-area game-{game.ID}">
