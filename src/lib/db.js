@@ -25,8 +25,6 @@ class database{
             rows = await conn.query(sql, values);
         }
         catch (err) {
-            console.log("Error");
-            console.log(err);
             throw err;
         }
         finally {
@@ -40,65 +38,73 @@ class database{
 
     async get(sql, values) {
         let conn;
+        let rows = [];
         try {
             conn = await this.pool.getConnection();
-            const rows = await conn.query(sql, values);
-            return rows;
+            rows = await conn.query(sql, values);
         }
         catch (err) {
-            console.log("Error"); 
-            console.log(err);
             throw err;
         }
         finally {
-            conn.end();
+            if(conn){
+                conn.end();
+            }
+            return rows;
         }
 
     }
     async insert(sql, values) {
         let conn;
+        let rows = [];
         try {
             conn = await this.pool.getConnection();
-            const rows = await conn.query(sql, values);
-            return rows.insertId;
+            rows = await conn.query(sql, values);
         }
         catch (err) {
             throw err;
         }
         finally {
-            if (conn) return conn.end();
+            if (conn){
+                conn.end();
+            }
+            return rows.insertId;
         }
     }
 
     async update(sql, values) {
         let conn;
+        let rows = [];
         try {
             conn = await this.pool.getConnection();
-            const rows = await conn.query(sql, values);
-            console.log("rows changed: " + rows.changedRows);
-            return rows.changedRows;
+            rows = await conn.query(sql, values);
         }
         catch (err) {
-            console.log(err);
             throw err;
         }
         finally {
-            if (conn) return conn.end();
+            if (conn){
+                conn.end();
+            }
+            return rows;
         }
     }
 
     async delete(sql, values) {
         let conn;
+        let rows = [];
         try {
             conn = await this.pool.getConnection();
-            const rows = await conn.query(sql, values);
-            return rows.affectedRows;
+            rows = await conn.query(sql, values);
         }
         catch (err) {
             throw err;
         }
         finally {
-            if (conn) return conn.end();
+            if (conn) {
+                conn.end();
+            }
+            return rows;
         }
 
     }
