@@ -1,6 +1,7 @@
 <script>
     import { onMount } from "svelte";
-
+    import { browser } from "$app/environment";
+    
     let game = {
         ID: null,
         Name: "New Game",
@@ -42,8 +43,20 @@
             body: formData
         });
 
-        const result = await response.json();
+        const result = response
         console.log(result);
+
+        if(result.status === 201) {
+            closeEditor();
+            //refresh
+            if(browser) {
+                window.location.reload();
+            }
+        } else {
+            alert('Something went wrong check logs');
+            console.log(result);
+        }
+
     }
 </script>
 
