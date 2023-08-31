@@ -27,7 +27,7 @@ async function uploadFileToS3(directory, file, metadata) {
 
     const command = new PutObjectCommand(params);
     let result = await s3.send(command);
-    let url = `${SECRET_CLOUDFLARE_BUCKET_URL}/${SECRET_CLOUDFLARE_BUCKET_NAME}/${directory}/${metadata.name}`;
+    let url = `${SECRET_CLOUDFLARE_BUCKET_URL}/${directory}/${metadata.name}`;
     console.log('Uploaded file to S3:', url);
     return {"result": result, "url": url};
 }
