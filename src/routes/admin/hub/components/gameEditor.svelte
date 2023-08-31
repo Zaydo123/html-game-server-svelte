@@ -1,6 +1,6 @@
 <script>
     import { onMount } from "svelte";
-
+    import { browser } from "$app/environment";
     export let game;
     let isVisible = true; // By default, the game editor card is visible
 
@@ -33,6 +33,18 @@
         });
 
         const result = await response;
+
+        if(result.status === 200) {
+            closeEditor();
+            //refresh
+            if(browser) {
+                window.location.reload();
+            }
+        } else {
+            alert('Something went wrong check logs');
+            console.log(result);
+        }
+
     }
 
     async function deleteGame() {
@@ -45,6 +57,15 @@
         });
 
         const result = await response;
+
+        if (result.status === 200) {
+            closeEditor();
+            //refresh
+            if(browser) {
+                window.location.reload();
+            }
+
+        }
     }
 </script>
 
