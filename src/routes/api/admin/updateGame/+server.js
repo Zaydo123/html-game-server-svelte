@@ -48,6 +48,8 @@ export async function POST({ request }) {
         if (parsedData.image) {
             const file = parsedData.image;
 
+            console.log('File:', file);
+
             // Upload the image to S3
             const data = await uploadFileToS3(parsedData.id, Buffer.from(await file.arrayBuffer()),file);
             let uploadResult = data.result;
@@ -64,7 +66,7 @@ export async function POST({ request }) {
 
         console.log('Result:', result);
 
-        if (result && result.changedRows > 0) {
+        if (result && result.affectedRows > 0) {
             return new Response("Game Updated", { status: 200, statusText: "Game Updated" });
         } else {
             return new Response("Game Not Updated", { status: 500, statusText: "Game Not Updated" });

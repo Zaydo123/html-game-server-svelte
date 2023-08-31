@@ -98,7 +98,7 @@ export async function POST({ request }) {
             console.log('Image URL not updated');
         }
 
-        if (result && result.lastID) {
+        if (result!=undefined && result.affectedRows > 0) {
             return new Response("Game Created", { status: 201, statusText: "Game Created" });
         } else {
             return new Response("Failed to Create Game", { status: 500, statusText: "Failed to Create Game" });
