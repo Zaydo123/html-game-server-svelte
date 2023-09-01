@@ -68,13 +68,16 @@
     updateDots();
   }
   let changes = 0;
+
+  setIndex(0);
+
   setInterval(()=>{
     if(changes == 0){
       changes++;
     } else {
       incrementIndex();
     }
-  }, 15000);
+  }, 10000);
 
 
 
@@ -113,7 +116,7 @@
 {#if websiteWidth >= 716}
 <div class="dot-container" style="text-align: center">
   {#each slides as slide, i}
-    <span role="button" tabindex=0 class={dots[i]} on:keypress={setIndex(i)} on:click={setIndex(i)}></span>
+    <span role="button" tabindex=0 class={dots[i]} on:keypress={()=>{setIndex(i)}} on:click={()=>{setIndex(i)}}></span>
   {/each}
 </div>
 {/if}

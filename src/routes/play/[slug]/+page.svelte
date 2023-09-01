@@ -100,7 +100,7 @@
     }
   }
 
-  let gameSRC = "/";
+  let gameSRC = "/loading.html";
   
   if(browser){
 

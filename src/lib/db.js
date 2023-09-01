@@ -68,7 +68,7 @@ class database{
             if (conn){
                 conn.end();
             }
-            return rows.insertId;
+            return rows;
         }
     }
 

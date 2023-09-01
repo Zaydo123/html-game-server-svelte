@@ -1,6 +1,5 @@
 import { db } from '$lib/db.js';
 import { json } from '@sveltejs/kit';
-import { adminAuthCookie } from '$lib/stores';
 import { verifySessionCookie } from '$lib/authUtils';
 
 export async function POST({request}) {

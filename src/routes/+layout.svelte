@@ -36,9 +36,11 @@ $: websiteWidth, updateTitle();
               box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.2);" href="/"><strong>{websiteTitle}</strong></a>
       </li>
       <li><a href="/mirrors">Mirrors</a></li>
-      <li><a href="/requestapp">Requests</a></li>
       {#if websiteWidth > 600 }
-      <li><a href="https://github.com/Zaydo123/html-game-server/issues/new" target="_blank">Bug Reports</a></li>
+      <li><a href="/request">Request</a></li>
+      <li><a href="/request">Report</a></li>
+      {:else if websiteWidth <= 600 }
+      <li><a href="/request">Requests</a></li>
       {/if}
       <li><a href="mailto:zayd@physics-central.com">Contact</a></li>
 

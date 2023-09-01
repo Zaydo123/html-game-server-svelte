@@ -5,6 +5,7 @@
     import { browser } from '$app/environment';
     import GameEditor from './components/gameEditor.svelte';
     import CreateGame from './components/createGame.svelte';
+	import { onMount } from 'svelte';
     
     export let data = [];
     let { games } = data;
@@ -72,6 +73,29 @@
         }
 
     }
+
+    let requests = [];
+    async function fetchRequests() {
+        try {
+            const res = await fetch(`/api/admin/fetchRequests`);
+            console.log(res);
+            const fetchedRequests = await res.json();
+            requests = fetchedRequests;
+
+            console.log(requests);
+
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    onMount(() => {
+        fetchRequests();
+    });
+
+
+
+
 </script>
 
 <h1 class="admin-hub-title">Admin Hub</h1>
@@ -146,7 +170,69 @@
 {/each}
 </div>
 
+<h1 class="admin-hub-title">Requests</h1>
+<!-- table of requests from /api/admin/requests -->
+<table class="requests-table">
+    <tr>
+        <th>Type</th>
+        <th>Details</th>
+        <th>Date</th>
+        <th>IP</th>
+    </tr>
+
+    {#if requests.length == 0}
+        <tr>
+            <td colspan="6">No requests</td>
+        </tr>
+    {:else}
+        {#each requests as request}
+            <tr>
+                <td>{request.Type}</td>
+                <td>{request.Details}</td>
+                <td>{new Date(request.Date).toLocaleString().split(',')[0]}</td>
+
+                <td>{request.IP}</td>
+            </tr>
+        {/each}
+    {/if}
+
+
+
+</table>
+
+
+
+
 <style>
+
+    /* table */
+    .requests-table {
+        width: 90%;
+        margin: auto;
+        margin-top: 20px;
+        border-collapse: collapse;
+    }
+
+    .requests-table td, .requests-table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        max-width: 500px;
+        color: white;
+        overflow : hidden;
+    }
+
+    .requests-table tr:hover {background-color: #ea0707;}
+
+    .requests-table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #af40ff;
+        color: white;
+    }
+    
+
+    
 
     .admin-hub-title {
         display: flex;
