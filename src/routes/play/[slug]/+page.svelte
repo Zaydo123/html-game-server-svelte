@@ -113,12 +113,7 @@
 
     //make opacity 0 then fade in ease in 
     if(game.gamedistribution!=null && game.gamedistribution.length>1){
-      //for development convenience
-      let currentURL = window.location.href;
-      if(currentURL.includes("localhost")){
-        currentURL = "https://www.physics-central.com/play/" + game.ID;
-      }
-      gameSRC = "https://html5.gamedistribution.com/" + game.gamedistribution + `/?gd_sdk_referrer_url=${currentURL}`;
+      gameSRC = "https://html5.gamedistribution.com/" + game.gamedistribution + `/?gd_sdk_referrer_url=https://www.physics-central.com/play/${game.ID}`;
     } else {
       gameSRC = game.Image.substring(0, game.Image.lastIndexOf("/")) + "/index.html";
     }

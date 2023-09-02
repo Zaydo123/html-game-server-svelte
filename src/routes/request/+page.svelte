@@ -26,6 +26,13 @@
     h1, h2 {
       color: #007bff
     }
+
+    h5 {
+      font-size: 4em;
+      color: #007bff;
+      margin: 0;
+      margin-bottom: 20px;
+    }
   
     /* Container */
     .container {
@@ -72,8 +79,29 @@
   </style>
   
   <div class="container">
-    <h1>Requests and Reports</h1>
   
+    
+      <section>
+        <h5>Requests</h5>
+        <form on:submit|preventDefault={handleSubmit}>
+          <label for="requestType">Request Type:</label>
+          <select id="requestType" bind:value={requestType} required>
+            <option value="">--Select--</option>
+            <option value="Game Requests">Game Requests</option>
+            <option value="Feature">Feature</option>
+            <option value="Mirror Links">Mirror Links</option>
+            <option value="Bug Reports">Bug Reports</option>
+            <option value="Support">Support</option>
+          <option value="Other">Other</option>
+          </select>
+    
+          <label for="requestDetails">Request Details:</label>
+          <textarea id="requestDetails" bind:value={requestDetails}></textarea>
+    
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    
     <section>
       <h2>FAQ</h2>
         <p><b>Q: Why are there so many ads?</b></p>
@@ -81,28 +109,6 @@
         <p><b>Q: The site is blocked at my school, what do I do?</b></p>
         <p>A: Try using going <a href="/mirrors">here</a> and choose a mirror link.</p>
     </section>
-  
-    <section>
-      <h2>Requests</h2>
-      <form on:submit|preventDefault={handleSubmit}>
-        <label for="requestType">Request Type:</label>
-        <select id="requestType" bind:value={requestType} required>
-          <option value="">--Select--</option>
-          <option value="Game Requests">Game Requests</option>
-          <option value="Feature">Feature</option>
-          <option value="Mirror Links">Mirror Links</option>
-          <option value="Bug Reports">Bug Reports</option>
-          <option value="Support">Support</option>
-        <option value="Other">Other</option>
-        </select>
-  
-        <label for="requestDetails">Request Details:</label>
-        <textarea id="requestDetails" bind:value={requestDetails}></textarea>
-  
-        <button type="submit">Submit</button>
-      </form>
-    </section>
-  
     <section>
       <h2>Bug Reports</h2>
       <p>If you encounter any bugs, please report them here!</p>

@@ -2,15 +2,33 @@
 	<link rel="stylesheet" href="/css/global.css" />
 </svelte:head>
 <script>
-
+  import { onMount } from "svelte";
   import Footer from '../components/home/footer.svelte';
 
-  export let data;
-  const { sites } = data;
-  console.log(sites);
+  //get all sites from /api/getMirrors
+  let sites = [];
+  
+  let fetchStatus = "loading..."
+
+  async function getSites() {
+    const response = await fetch('/api/getMirrors');
+    sites = await response.json();
+    console.log(sites);
+  }
+
+  onMount(async () => {
+    await getSites();
+    fetchStatus = "";
+  });
+
+  
 </script>
 
   <style>
+
+    .loading {
+      text-align: center;
+    }
 
     .container {
       max-width: 800px;
@@ -79,11 +97,16 @@
 
   <div class="container">
     <h1>Physics Central Mirrors</h1>
+    {#if fetchStatus == "loading..."}
+      <p class="loading">{fetchStatus}</p>
+    {:else if sites.length == 0}
+      <p>No sites found.</p>
+    {/if}
     <ul>
       {#each sites as site, i}
         <li>
-          <a href={site.url}><span>{site.name}</span></a>
-          <span class="status {site.status}">{sites[i].status}</span>
+          <a href={site.URL}><span>{site.Name}</span></a>
+          <span class="status {site.Status}">{sites[i].Status}</span>
         </li>
       {/each}
     </ul>

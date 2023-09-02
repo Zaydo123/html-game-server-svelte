@@ -42,7 +42,7 @@ $: websiteWidth, updateTitle();
       {:else if websiteWidth <= 600 }
       <li><a href="/request">Requests</a></li>
       {/if}
-      <li><a href="mailto:zayd@physics-central.com">Contact</a></li>
+      <li><a href="mailto:admin@physics-central.com">Contact</a></li>
 
         <a href="/settings" class="settings">
           <!-- svg from /images/svg/settings-cog.svg -->

@@ -9,6 +9,16 @@ onMount(() => {
     fetch("/api/title")
         .then((res) => res.json())
         .then((data) => (title = data.title));
+
+    //then post to /api/visit to count the visit
+    fetch("/api/visit", {
+        method: "POST",
+    });
+
+    
+
+
+
 });
 
 

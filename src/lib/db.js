@@ -31,7 +31,6 @@ class database{
             if (conn){
                 conn.end();
             }
-            console.log(rows);
             return rows;
         }
     }
