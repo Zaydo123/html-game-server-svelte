@@ -16,6 +16,8 @@
 <ul>Fix admin panel to be more responsive - Done</ul>
 <ul>Sort by hottest games in past 24h - Cancelled</ul>
 <ul>Visit counter isnt added on visit - Done</ul>
+<ul>Auto update site, possibly with github actions or alongside ping</ul>
+<ul>Build and deploy</ul>
 
 
 # create-svelte
