@@ -1,6 +1,8 @@
 
 <!-- link stylesheet global -->
-<link rel='stylesheet' href='/css/global.css' />
+<svelte:head>
+    <link rel='stylesheet' href='/css/global.css' />
+</svelte:head>
 <script>
     import { browser } from '$app/environment';
     import GameEditor from './components/gameEditor.svelte';

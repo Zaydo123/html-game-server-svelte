@@ -1,5 +1,6 @@
-<link rel="stylesheet" href="/css/global.css" />
-
+<svelte:head>
+	<link rel="stylesheet" href="/css/global.css" />
+</svelte:head>
 <script>
 
   import Footer from '../components/home/footer.svelte';

@@ -1,3 +1,6 @@
+<svelte:head>
+<link rel="stylesheet" href="/css/global.css" />
+</svelte:head>
 
 <script>
 
@@ -42,9 +45,7 @@
       }
   }
   </script>
-  
-  <link rel='stylesheet' href='css/global.css' />
-  
+    
   <div class="login-box">
       <form on:submit|preventDefault={handleLogin}>
           <div class="user-box">

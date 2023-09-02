@@ -1,4 +1,6 @@
-<link rel="stylesheet" href="/css/global.css" />
+<svelte:head>
+	<link rel="stylesheet" href="/css/global.css" />
+</svelte:head>
 
 <script>
     import Title from "../components/Title.svelte"

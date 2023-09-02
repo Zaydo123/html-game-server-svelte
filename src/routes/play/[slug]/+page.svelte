@@ -36,11 +36,11 @@
     window.__h82AlnkH6D91__("WyJwdWItMzg1NTkwOTk2MjE3ODg2OCIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi0zODU1OTA5OTYyMTc4ODY4Il0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hVWmY4V1VWanpCMmlVYzZwNE9qQUFGWmZiRl9WY3RwMVpHNFVBbGJfTm5MSkx0a0tLU3RRRTNGNVFYQWJWX2trWFNfTEtaV1dSSzdFenlIcGJsdEduNkxRXHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdjVnhMVGQ3NGJmd21PWENDTndud3RUQUVhMl9QOW9vcnBnekRnb21uWVo5WHlWX1RVcDd5LUNjNGpUQ0NXeEI5MFhGdjBUdzNXWms3cmQ1dnFTMHlaREFcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFhZdkV6NU9IR0h5eDFXazlIaXBSUEJscXFtOExvWFNscVlxSTV5eU1hOXdWRU5fS0J6TXR4aXhQY1REQlMzSVZoQmFVYWl2aXh6S19sU2lhV3haOWtaVEFcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFZuYkZOT0NUNnlITFB2TnFVRGV0TmJCV29PUEJDa2hkTFg1bXZmV1FnSXJ5NThLWFJXOTJyVVhJZzhHUlE2OEJqYTk3ZDNqZktWUGRfUHhzYzY0TzU1TEFcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUTTROVFU1TURrNU5qSXhOemc0TmpnXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi0zODU1OTA5OTYyMTc4ODY4LmpzP3VzcXBcdTAwM2RDQUUiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4VnhPcEdTZTQ0cWgzSllWeXlzTmw5UmZpZkkteDhwcVlfMTFselAxd0ZiMlNZVFhDbTVURDl4X0hVMHZqY00xQk5SQ0lyNTNxUjdkVWcyVjJBLWNNN0RGd1x1MDAzZFx1MDAzZCJd");
   </script>
   
-  <link rel="stylesheet" href="/css/global.css" />
-
+  
   <script src="/clever_ads.js" type="text/javascript"></script>
-{/if}
-
+  {/if}
+  
+  <link rel="stylesheet" href="/css/global.css" />
 </svelte:head>
 
 <script>
@@ -171,7 +171,7 @@
       </div>
     {/if}  
 
-  <iframe src={gameSRC} frameborder="5" allowfullscreen="true" allowtransparency="true" allow="autoplay; payment; fullscreen; microphone; focus-without-user-activation *; screen-wake-lock; clipboard-read; clipboard-write; " sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-scripts allow-same-origin allow-downloads allow-popups" loading="eager" data-hj-allow-iframe="true" class="game-iframe" title="game-{game.ID}" />
+  <iframe src={gameSRC} frameborder="5" allowfullscreen="true" allowtransparency="true" allow="autoplay; payment; fullscreen; microphone; focus-without-user-activation *; screen-wake-lock; clipboard-read; clipboard-write; " sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-scripts allow-same-origin allow-downloads allow-popups" loading="lazy" data-hj-allow-iframe="true" class="game-iframe" title="game-{game.ID}" />
 
     {#if !isDevMode && !isAdBlockEnabled}
       <div class="game-ads right-ad">
