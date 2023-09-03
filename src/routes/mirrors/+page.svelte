@@ -4,6 +4,8 @@
 <script>
   import { onMount } from "svelte";
   import Footer from '../components/home/footer.svelte';
+  import Title from "../components/title.svelte"
+
 
   //get all sites from /api/getMirrors
   let sites = [];
@@ -115,3 +117,5 @@
 
   
 <Footer />
+<Title />
+

@@ -3,7 +3,7 @@
 </svelte:head>
 
 <script>
-    import Title from "../components/Title.svelte"
+    import Title from "../components/title.svelte"
     let requestType = "";
     let requestDetails = "";
   
