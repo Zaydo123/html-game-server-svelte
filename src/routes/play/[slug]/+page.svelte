@@ -45,7 +45,7 @@
 
 <script>
   /** @type {import('./$types').PageData} */
-  import Title from "../../components/Title.svelte"
+  import Title from "../../components/title.svelte"
   import { browser } from '$app/environment';
   import { onMount } from 'svelte';
   export let data;
