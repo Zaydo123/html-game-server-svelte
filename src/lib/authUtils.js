@@ -1,7 +1,6 @@
-
-//const bcrypt = require('bcryptjs');
 import * as bcrypt from "bcryptjs";
 import { adminAuthCookie } from '$lib/stores';
+
 
 // Hash a password
 function hashPassword(plainPassword) {
