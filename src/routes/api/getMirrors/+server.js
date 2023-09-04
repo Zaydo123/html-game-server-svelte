@@ -5,11 +5,16 @@ export async function GET({request}) {
 
   //send a request to URL each of the mirrors to see if they are up
   for(let i = 0; i < result.length; i++){
+    
     let url = result[i].URL;
-    let response = await fetch(url+"/ping");
-    if(response.ok){
-        result[i].Status = "Online";
-    } else {
+    try{
+        let response = await fetch(url+"/ping");
+        if(response.ok){
+            result[i].Status = "Online";
+        } else {
+            result[i].Status = "Offline";
+        }
+    } catch(err){
         result[i].Status = "Offline";
     }
   }

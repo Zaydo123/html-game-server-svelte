@@ -19,15 +19,7 @@ export async function POST(data) {
   const requestType = requestTypeMatch ? requestTypeMatch[1] : null;
   const requestDetails = requestDetailsMatch ? requestDetailsMatch[1] : null;
 
-  // Log the request data
-  console.log("Request Type:", requestType);
-  console.log("Request Details:", requestDetails);
-
-
   // Get Request IP 
-
-  console.log("Request Headers:",)
-
   let clientAddress = data.getClientAddress();
 
   if (!clientAddress){

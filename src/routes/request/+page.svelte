@@ -13,10 +13,21 @@
         formData.append("requestType", requestType);
         formData.append("requestDetails", requestDetails);
 
-        await fetch("/api/requests", {
+        const response = await fetch("/api/requests", {
             method: "POST",
             body: formData
         })
+
+        if (response.ok) {
+            alert("Request submitted successfully!");
+        } else {
+            alert("Request failed to submit. Please try again later.");
+        }
+        
+        //clear form
+        requestType = "";
+        requestDetails = "";
+        
 
     }
   </script>
