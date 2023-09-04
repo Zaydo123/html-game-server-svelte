@@ -60,10 +60,6 @@
   grid-row: 1 / 2;
 }
 
-.footer li:hover ~ li p {
-  animation: wave-animation 0.3s infinite;
-}
-
 .footer div {
   display: flex;
   width: 100%;

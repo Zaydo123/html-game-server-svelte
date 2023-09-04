@@ -1,8 +1,6 @@
 import { db } from '$lib/db';
 import { verifySessionCookie } from '$lib/authUtils';
 import {uploadFileToS3} from '$lib/cloudflareUtils';
-import fs from 'fs';
-import path from 'path';
 
 // Helper function to structure form data
 function formBody(body) {

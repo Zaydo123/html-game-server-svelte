@@ -27,14 +27,14 @@
         //clear form
         requestType = "";
         requestDetails = "";
-        
+
 
     }
   </script>
   
   <style>
 
-    h1, h2 {
+    h2 {
       color: #007bff
     }
 

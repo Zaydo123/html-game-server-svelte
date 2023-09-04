@@ -1,16 +1,25 @@
-import * as bcrypt from "bcryptjs";
+import bcryptjs from "bcryptjs";
 import { adminAuthCookie } from '$lib/stores';
 
 
 // Hash a password
 function hashPassword(plainPassword) {
-    const salt = bcrypt.genSaltSync(10);
-    return bcrypt.hashSync(plainPassword, salt);
+    const salt = bcryptjs.genSalt(10,
+        function(err, salt) {
+            if (err) {
+                throw err;
+            } else {
+                return salt;
+            }
+        }
+    );
+
+    return bcryptjs.hashSync(plainPassword, salt);
 }
 
 // Verify a password against a hash
 function verifyPassword(plainPassword, hashedPassword) {
-    return bcrypt.compareSync(plainPassword, hashedPassword);
+    return bcryptjs.compareSync(plainPassword, hashedPassword);
 }
 
 function generateSessionToken() {
