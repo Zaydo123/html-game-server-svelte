@@ -4,12 +4,6 @@
 
     let slides = [
       {
-        "title": "",
-        "description": "",
-        "image": "/images/banners/PhysicsChatAd.png",
-        "href" : "https://physics-chat.com"
-      },
-      {
         "title": "Welcome",
         "description": "The new and improved Physics Central!",
         "image": "/images/banners/RocketBanner1@2.5x.png",

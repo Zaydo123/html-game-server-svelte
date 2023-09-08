@@ -111,7 +111,6 @@
     if(window.location.href.includes("localhost")){
       isDevMode = true;
     }
-
     //make opacity 0 then fade in ease in 
     if(game.gamedistribution!=null && game.gamedistribution.length>1){
       gameSRC = "https://html5.gamedistribution.com/" + game.gamedistribution + `/?gd_sdk_referrer_url=https://www.physics-central.com/play/${game.ID}`;

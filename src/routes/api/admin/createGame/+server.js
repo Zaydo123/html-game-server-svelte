@@ -49,28 +49,53 @@ export async function POST({ request }) {
             "INSERT INTO games (Name, `Date Added`, Visits, gamedistribution, Extra, Enabled) VALUES (?, ?, ?, ?, ?, ?)",
             [parsedData.name, parsedData.dateAdded, parsedData.visits, parsedData.gamedistribution, parsedData.extra, parsedData.enabled]
         );
+        try {
+            // ... rest of your code ...
+    
+            const gameFiles = values.getAll('gameFiles'); // This will be an array of files
+            const gameFilesMetadata = values.getAll('gameFilesMetadata'); // This will be an array of file paths
+    
+            for(let i = 0; i < gameFiles.length; i++) {
+                const gameFile = gameFiles[i];
+                const metadata = gameFilesMetadata[i];
 
-        // For file data
-        const gameFiles = values.getAll('gameFiles'); // This will be an array of files
-        const gameFilesMetadata = values.getAll('gameFilesMetadata'); // This will be an array of file paths
+                console.log('Metadata:', metadata)
+                try {
+                    console.log('Trying to upload game file:', gameFile.name);
+                    let directories = metadata.split('/'); // Split the path into segments
+                    console.log('1- Directories:', directories);
+
+                    let fileName = directories[directories.length - 1]; // Get the file name
+                    //remove last element from array
+                    directories.pop();
+                    console.log('2- Directories:', directories);
+                    directories.shift(); // Remove the first directory
+                    console.log('3- Directories:', directories);
+                    let directory = directories.join('/');
+                    console.log('4- directory:', directory);
+                    if(directory=='/') directory = '';
+                    
+                    if(directories.length > 0){
+                        directory = `${result.insertId}/${directory}`;
+                    } else {
+                        directory = `${result.insertId}`;
+                    }
+                    
+                    console.log('5- directory:', directory);
 
 
-        for(let i = 0; i < gameFiles.length; i++) {
-            const gameFile = gameFiles[i];
-            const metadata = gameFilesMetadata[i];
-        
-            try {
-                console.log('Trying to upload game file:', gameFile.name);
-                let directories = path.dirname(metadata).split(path.sep);
-                directories.shift(); // Remove the game name (e.g., "paperio-2")
-                let directory = directories.join(path.sep);
-                
-                directory = result.insertId + (directory ? '/' + directory : ''); 
-                console.log('Directory:', directory);
-                uploadFileToS3(directory, Buffer.from(await gameFile.arrayBuffer()), gameFile);
-            } catch (error) {
-                console.error('Error uploading game file:', error);
+                    // Now call the upload function:
+                    uploadFileToS3(directory, Buffer.from(await gameFile.arrayBuffer()), metadata);
+
+                } catch (error) {
+                    console.error('Error uploading game file:', error);
+                }
             }
+    
+            // ... rest of your code ...
+        } catch (error) {
+            console.error('Error creating game:', error);
+            return new Response("Error Creating Game", { status: 500, statusText: "Error Creating Game" });
         }
 
         // Handle image upload if it exists
