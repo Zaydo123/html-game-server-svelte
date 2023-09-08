@@ -43,11 +43,12 @@ $: websiteWidth, updateTitle();
       <li><a href="/request">Requests</a></li>
       {/if}
       <li><a href="mailto:admin@physics-central.com">Contact</a></li>
-
+      {#if websiteWidth > 600 }
         <a href="/settings" class="settings">
           <!-- svg from /images/svg/settings-cog.svg -->
             <img class="settings" src="/assets/settings-icon.png" alt="settings" />
         </a>
+      {/if}
 
       </ul>
 </nav>
