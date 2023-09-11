@@ -51,12 +51,29 @@
   import { onMount } from 'svelte';
   export let data;
 
-  let game = data.props.game;
   let gameExtra = {};
+  let game = {};
+
+
   try{
+    game = data.props.game;
     gameExtra = JSON.parse(game.Extra);
   } catch(e){
-    console.log("invalid json in game.Extra of game " + game.ID);
+    switch(e.name){
+      case "SyntaxError":
+        console.log("invalid json in game.Extra of game ????");
+        break;
+      default:
+        console.log("unknown error in game.Extra of game ????");
+        break;
+    }
+
+  } finally {
+    if(browser && game.ID == null){
+      window.alert("It looks like this game is not available. Please try again later.")
+      window.location.href = "/";
+
+    }
   }
 
   let websiteWidth = 1000;
