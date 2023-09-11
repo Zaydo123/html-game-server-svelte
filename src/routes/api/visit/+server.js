@@ -1,20 +1,20 @@
+//The POST function is called when a POST request is made to the api/visit endpoint. This function is responsible for incrementing the number of visits for a specific mirror in the database. The function takes the URL of the mirror from the request, and queries the database for a row where the URL matches the request URL. If there is no match, then the function will return a 404 error. If a match is found, then the function will increment the number of visits for that row by 1.
 import { db } from '$lib/db';
 
 export async function POST({ request }) {
-    //update mirrors table with new visit at current url
-
     let requestURL = request.url;
     requestURL = requestURL.replace("/api/visit", "");
-
-    //make up a name for the site using the URL
-    let siteName = requestURL.replace("https://", "");
-    siteName = siteName.replace("http://", "");
-    siteName = siteName.split(":")[0];
-    siteName = siteName.split(".")[0];
-
     let result = await db.get('SELECT * FROM mirrors WHERE URL = ?', requestURL);
+
     if(result.length == 0){
-        const result = await db.query('INSERT INTO mirrors (URL, Visits) VALUES (?, 1)', requestURL);
+        console.log('No result found for URL:', requestURL);
+        return new Response(JSON.stringify({"result": "error", "message": "No result found for URL"}), {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            status: 404
+        });
+
     }
 
     //if request.url is in the database, increment the visit count
