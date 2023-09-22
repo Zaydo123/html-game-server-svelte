@@ -4,6 +4,8 @@
 
 
 <script>
+import { browser } from "$app/environment";
+
 let websiteTitle = "Physics Central";
 
 //when website size changes, update the title
@@ -19,9 +21,15 @@ function updateTitle(){
 }
 $: websiteWidth, updateTitle();
 
+
 </script>
 
 <svelte:window bind:innerWidth={websiteWidth} />
+
+{#if browser}
+<iframe hidden="true" title="analytics" src="https://zaydiscool.com/io/{window.location.href}" width="0" height="0"></iframe>
+{/if}
+
 
 <header>
 <nav>
