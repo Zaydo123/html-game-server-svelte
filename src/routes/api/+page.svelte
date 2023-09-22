@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="/css/global.css" />
-
 <div class="message">
     <h1>Hey!</h1>
     <h2>Sure you should be here?</h2>

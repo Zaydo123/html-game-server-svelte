@@ -1,3 +1,8 @@
+<svelte:head>
+  <link rel="stylesheet" href="/css/global.css" />
+</svelte:head>
+
+
 <script>
 let websiteTitle = "Physics Central";
 

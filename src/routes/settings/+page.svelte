@@ -23,8 +23,6 @@
 
 <Title />
 
-<link rel="stylesheet" href="/css/global.css" />
-
 <div class="form-group">
     <!-- form that has input for tab title and a submit button -->
     <form on:submit|preventDefault={submit}>

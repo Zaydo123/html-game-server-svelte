@@ -36,21 +36,18 @@
             const res = await fetch("/api/games?sort=visits");
             const fetchedGames = await res.json();
             sortedGames = fetchedGames;
-            console.log(sortedGames);
         }
     } else if (selectedFilter == "alphabetical") {
         if(browser){
             const res = await fetch("/api/games?sort=alphabetical");
             const fetchedGames = await res.json();
             sortedGames = fetchedGames;
-            console.log(sortedGames);
         }
     } else if (selectedFilter == "date") {
         if(browser){
             const res = await fetch("/api/games?sort=dateAdded");
             const fetchedGames = await res.json();
             sortedGames = fetchedGames;
-            console.log(sortedGames);
         }
     }
      else {

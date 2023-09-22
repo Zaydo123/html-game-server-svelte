@@ -1,6 +1,7 @@
-// src/routes/[your-directory]/+server.js
 import { db } from '$lib/db';
 
+// Object to store last request times
+const lastRequestTimes = {};
 
 export async function POST(data) {
   const { request } = data;
@@ -33,14 +34,25 @@ export async function POST(data) {
     clientAddress = "No Ip found";
   }
 
+  // Check for cooldown
+  const currentTime = Date.now();
+  const lastRequestTime = lastRequestTimes[clientAddress] || 0;
+
+  if (currentTime - lastRequestTime < 10000) {
+    return new Response("Cooldown, please wait 10 seconds between requests.", { status: 429 });
+  }
+
+  // Update last request time
+  lastRequestTimes[clientAddress] = currentTime;
+
+  // Database operations
   let sql = ` INSERT INTO requests (Type, Details, IP) VALUES (?, ?, ?)`;
   let params = [requestType, requestDetails, clientAddress];
   let result = await db.insert(sql, params);
 
-
   if(result.affectedRows > 0){
     return new Response("Success!", { status: 200 });
-  }else{
+  } else {
     return new Response("Error!", { status: 500 });
   }
 }

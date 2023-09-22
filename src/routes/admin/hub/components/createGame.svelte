@@ -1,5 +1,4 @@
 <script>
-    import { onMount } from "svelte";
     import { browser } from "$app/environment";
     
     let game = {
