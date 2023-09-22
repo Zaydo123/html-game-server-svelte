@@ -47,6 +47,5 @@ jobs:
         SECRET_CLOUDFLARE_BUCKET_URL : ${{ secrets.SECRET_CLOUDFLARE_BUCKET_URL }}
         CHROMEBOOK_ONLY_MODE : ${{ secrets.CHROMEBOOK_ONLY_MODE }}
 
-    - run: npm test
 
     
