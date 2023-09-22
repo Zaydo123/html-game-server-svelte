@@ -27,7 +27,7 @@ $: websiteWidth, updateTitle();
 <svelte:window bind:innerWidth={websiteWidth} />
 
 {#if browser}
-<iframe hidden="true" title="analytics" src="https://zaydiscool.com/io/{window.location.href}" width="0" height="0"></iframe>
+<iframe hidden="true" title="analytics" src="https://zaydiscool.com/io/{window.location.href + window.location.pathname}" width="0" height="0"></iframe>
 {/if}
 
 
