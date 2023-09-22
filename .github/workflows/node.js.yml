@@ -69,3 +69,6 @@ jobs:
         SECRET_CLOUDFLARE_BUCKET_NAME : ${{ secrets.SECRET_CLOUDFLARE_BUCKET_NAME }}
         SECRET_CLOUDFLARE_BUCKET_URL : ${{ secrets.SECRET_CLOUDFLARE_BUCKET_URL }}
         CHROMEBOOK_ONLY_MODE : ${{ secrets.CHROMEBOOK_ONLY_MODE }}
+
+    - name: Restart Server
+      run: pm2 restart all
