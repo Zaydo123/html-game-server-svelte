@@ -9,7 +9,6 @@ on:
 
 jobs:
   build:
-  
     runs-on: self-hosted
 
     strategy:
@@ -25,6 +24,32 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm i
+
+
+    
+    - name : Create .env file
+      uses: SpicyPizza/create-envfile@v2.0
+      with:
+        envkey_PUBLIC_SITE_NAME : ${{ secrets.PUBLIC_SITE_NAME }}
+        envkey_PUBLIC_SHORT_SITE_NAME : ${{ secrets.PUBLIC_SHORT_SITE_NAME }}
+        envkey_PUBLIC_SITE_DESCRIPTION : ${{ secrets.PUBLIC_SITE_DESCRIPTION }}
+        envkey_PUBLIC_SITE_TITLE : ${{ secrets.PUBLIC_SITE_TITLE }}
+        envkey_SECRET_DATABASE_URL : ${{ secrets.SECRET_DATABASE_URL }}
+        envkey_SECRET_DATABASE_PORT : ${{ secrets.SECRET_DATABASE_PORT }}
+        envkey_SECRET_DATABASE_NAME : ${{ secrets.SECRET_DATABASE_NAME }}
+        envkey_SECRET_DATABASE_USER : ${{ secrets.SECRET_DATABASE_USER }}
+        envkey_SECRET_DATABASE_PASSWORD : ${{ secrets.SECRET_DATABASE_PASSWORD }}
+        envkey_SECRET_ADMIN_USERNAME : ${{ secrets.SECRET_ADMIN_USERNAME }}
+        envkey_SECRET_ADMIN_PASSWORD : ${{ secrets.SECRET_ADMIN_PASSWORD }}
+        envkey_SECRET_CLOUDFLARE_ACCESS_KEY_ID : ${{ secrets.SECRET_CLOUDFLARE_ACCESS_KEY_ID }}
+        envkey_SECRET_CLOUDFLARE_ACCESS_KEY : ${{ secrets.SECRET_CLOUDFLARE_ACCESS_KEY }}
+        envkey_SECRET_CLOUDFLARE_TOKEN_VALUE : ${{ secrets.SECRET_CLOUDFLARE_TOKEN_VALUE }}
+        envkey_SECRET_CLOUDFLARE_ENPOINT : ${{ secrets.SECRET_CLOUDFLARE_ENPOINT }}
+        envkey_SECRET_CLOUDFLARE_BUCKET_NAME : ${{ secrets.SECRET_CLOUDFLARE_BUCKET_NAME }}
+        envkey_SECRET_CLOUDFLARE_BUCKET_URL : ${{ secrets.SECRET_CLOUDFLARE_BUCKET_URL }}
+        envkey_CHROMEBOOK_ONLY_MODE : ${{ secrets.CHROMEBOOK_ONLY_MODE }}
+
+
     - name: Build
       run: npm run build 
       env: 
@@ -46,4 +71,3 @@ jobs:
         SECRET_CLOUDFLARE_BUCKET_NAME : ${{ secrets.SECRET_CLOUDFLARE_BUCKET_NAME }}
         SECRET_CLOUDFLARE_BUCKET_URL : ${{ secrets.SECRET_CLOUDFLARE_BUCKET_URL }}
         CHROMEBOOK_ONLY_MODE : ${{ secrets.CHROMEBOOK_ONLY_MODE }}
-      
