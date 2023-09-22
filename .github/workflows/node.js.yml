@@ -26,7 +26,7 @@ jobs:
         cache: 'npm'
     - run: npm i
     - name: Build
-      run: npm run build --if-present
+      run: npm run build 
       env: 
         PUBLIC_SITE_NAME : ${{ secrets.PUBLIC_SITE_NAME }}
         PUBLIC_SHORT_SITE_NAME : ${{ secrets.PUBLIC_SHORT_SITE_NAME }}
