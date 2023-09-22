@@ -11,7 +11,7 @@
 <h1> To Do: </h1>
 <p>Last updated 8/28</p>
 <ul>Request a game page - Done </ul>
-<ul>Chromebook only mode? - Cancelled </ul>
+<ul>Chromebook only mode? - Done </ul>
 <ul>Ads.txt file - Done</ul>
 <ul>Fix admin panel to be more responsive - Done</ul>
 <ul>Sort by hottest games in past 24h - Cancelled</ul>
