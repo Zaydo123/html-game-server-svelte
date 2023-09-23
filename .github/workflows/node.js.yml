@@ -25,7 +25,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm i
-
+    - name: install pm2
+      run: npm install pm2 -g
+      
     - name : Create .env file
       uses: SpicyPizza/create-envfile@v2.0
       with:
