@@ -9,11 +9,12 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ${{matrix.runner}}
 
     strategy:
       matrix:
         node-version: [18.x]
+        runner: [self-hosted, Linux]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
