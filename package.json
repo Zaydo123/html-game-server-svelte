@@ -6,7 +6,7 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
-		"deploy": "pm2 start build/index.js -f",
+		"deploy": "pm2 start build/index.js --name html-game-server",
 		"lint": "prettier --plugin-search-dir . --check .",
 		"format": "prettier --plugin-search-dir . --write ."
 	},
