@@ -78,4 +78,4 @@ jobs:
     
     - name: Start/Restart Server (pm2)
       if: steps.build.outcome == 'success'
-      run: pm2 stop all && pm2 start node build && pm2 save
+      run: pm2 stop all && pm2 start node build
