@@ -24,10 +24,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-
-    - name: Installing Dependencies   
     - run: npm i
-    - name: Installing PM2
+    - name: install pm2
       run: npm install pm2 -g
 
     - name : Create .env file
