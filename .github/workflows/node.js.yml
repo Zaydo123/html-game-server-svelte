@@ -75,7 +75,6 @@ jobs:
         CHROMEBOOK_ONLY_MODE : ${{ secrets.CHROMEBOOK_ONLY_MODE }}
 
     
-    
     - name: Start/Restart Server (pm2)
       if: steps.build.outcome == 'success'
-      run: pm2 stop all && pm2 start node build
+      run: npm run deploy
