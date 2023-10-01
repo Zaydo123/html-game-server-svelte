@@ -12,6 +12,8 @@ sudo apt update
 sudo apt install caddy
 `
 
+OR 
+
 # Docker build
 docker build  --env-file .env -t zaydalzein/svelte-game-server:1.01 --platform=linux/amd64 . 
 
@@ -23,3 +25,7 @@ docker build  --env-file .env -t zaydalzein/svelte-game-server:1.01 --platform=l
 --env-file ./.env \
 zaydalzein/svetle-game-server:1.01`
 `
+
+
+# Easiest Method (for the moment)
+`docker-compose up -d`
