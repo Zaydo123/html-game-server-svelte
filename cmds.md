@@ -11,3 +11,15 @@ curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo 
 sudo apt update
 sudo apt install caddy
 `
+
+# Docker build
+docker build  --env-file .env -t zaydalzein/svelte-game-server:1.01 --platform=linux/amd64 . 
+
+`DOCKER_BUILDKIT=1 docker build -t zaydalzein/svelte-game-server:1.01 --platform=linux/amd64 .`
+
+
+# Docker run 
+`docker run -dp 3000:3000 \
+--env-file ./.env \
+zaydalzein/svetle-game-server:1.01`
+`
