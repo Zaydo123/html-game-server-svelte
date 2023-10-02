@@ -9,7 +9,7 @@ async function newS3Client() {
           accessKeyId: SECRET_CLOUDFLARE_ACCESS_KEY_ID,
           secretAccessKey: SECRET_CLOUDFLARE_ACCESS_KEY
       },
-      endpoint: SECRET_CLOUDFLARE_ENPOINT
+      endpoint: SECRET_CLOUDFLARE_ENDPOINT
     });
 }
 
