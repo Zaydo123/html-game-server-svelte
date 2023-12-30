@@ -1,3 +1,4 @@
+import { PUBLIC_ADSENSE_CLIENT_ID, PUBLIC_ADSENSE_GAME_SIDES_SLOT_ID } from '$env/static/public';
 import { db } from '$lib/db.js';
 
 export async function GET({ params }) {
@@ -19,17 +20,14 @@ export async function GET({ params }) {
     `;
 
     // Since you're expecting a single game, use a function like "get" (if your db utility provides it)
-    const game = await db.get(sql, [id]);
-
-    if (!game) {
-        return new Response(JSON.stringify({ error: 'Game not found or not enabled' }), {
-            status: 404,
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
+    let game = await db.get(sql, [id]);
+    if (game && game.length > 0) {
+        game[0].adsense = {
+            client: PUBLIC_ADSENSE_CLIENT_ID,
+            slot: PUBLIC_ADSENSE_GAME_SIDES_SLOT_ID
+        };
     }
-
+    
     return new Response(JSON.stringify(game), {
         status: 200,
         headers: {

@@ -35,7 +35,6 @@
     if(browser && game.ID == null){
       window.alert("It looks like this game is not available. Please try again later.")
       window.location.href = "/";
-
     }
   }
 
@@ -128,13 +127,13 @@
   <div class="iframe-area game-{game.ID}">
     {#if !isDevMode && !isAdBlockEnabled}
       <div class="game-ads left-ad">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3855909962178868"
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={game.adsense.client}"
            crossorigin="anonymous"></script>
         <!-- leftIframe -->
         <ins class="adsbygoogle"
            style="display:inline-block;width:150px;height:550px"
            data-ad-client="ca-pub-3855909962178868"
-           data-ad-slot="4563054865"></ins>
+           data-ad-slot="{game.adsense.slot}"></ins>
         <script>
            (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
