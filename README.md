@@ -1,42 +1,48 @@
-# html-game-server-svelte
+# Svelte Game Server
+- [Svelte Game Server](#svelte-game-server)
+- [Quick Start](#quick-start)
+  - [Step 1 - setup reverse proxy](#step-1---setup-reverse-proxy)
+  - [Step 2 - download docker image](#step-2---download-docker-image)
+  - [Step 3 - create .env file](#step-3---create-env-file)
+  - [Step 4 - run docker image](#step-4---run-docker-image)
+  - [Step 5 - add games to the server](#step-5---add-games-to-the-server)
+- [Developing](#developing)
+- [Building](#building)
 
- <p>
-    Hi! I'm attempting to completely rewrite https://github.com/Zaydo123/html-game-server but in svelte. 
- </p>
+# Quick Start
 
- <p>
-    This is a learning project for svelte, although I do plan on pushing this project to production soon
- </p>
+Prerequisites to run this project:
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+- [Nginx](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/) or [Caddy](https://caddyserver.com/docs/install)
+- [Cloudflare R2 Bucket](https://developers.cloudflare.com/r2/)
+- [Adsense Account](https://www.google.com/adsense/start/)
 
-<h1> To Do: </h1>
-<p>Last updated 8/28</p>
-<ul>Request a game page - Done </ul>
-<ul>Chromebook only mode? - Done </ul>
-<ul>Ads.txt file - Done</ul>
-<ul>Fix admin panel to be more responsive - Done</ul>
-<ul>Sort by hottest games in past 24h - Cancelled</ul>
-<ul>Visit counter isnt added on visit - Done</ul>
-<ul>Auto update site, possibly with github actions or alongside ping</ul>
-<ul>Build and deploy</ul>
+## Step 1 - setup reverse proxy
 
+- [Nginx](https://www.digitalocean.com/community/tutorials/how-to-configure-nginx-as-a-reverse-proxy-on-ubuntu-22-04) or [Caddy](https://caddyserver.com/docs/quick-starts/reverse-proxy)
 
-# create-svelte
-
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
+## Step 2 - download docker image
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+docker pull zaydalzein/svelte-game-server
 ```
 
-## Developing
+## Step 3 - create .env file 
+look at [.env.example](./.env.example) for an example
+
+
+## Step 4 - run docker image
+```bash
+docker compose up -d
+```
+
+## Step 5 - add games to the server
+- [localhost:3000/admin](http://localhost:3000/admin)
+- Click on the "+" button to add a new game and fill in the details
+
+
+# Developing
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
@@ -46,15 +52,23 @@ npm run dev
 # or start the server and open the app in a new browser tab
 npm run dev -- --open
 ```
+You can preview the production build with `npm run preview`.
 
-## Building
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
 
-To create a production version of your app:
+# Building
+
+To create a production version of your app (without docker):
 
 ```bash
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+With docker (recommended):
+```bash
+docker build -t zaydalzein/svelte-game-server --platform=linux/amd64 .
+```
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+
+
