@@ -10,7 +10,7 @@ export async function GET({request}) {
     try{
         let response = await Promise.race([
           fetch(url+"/ping"),
-          new Promise((resolve, reject) => setTimeout(reject, 2000)) // 5 seconds timeout
+          new Promise((resolve, reject) => setTimeout(reject, 2000)) // 2 seconds timeout
         ]);
         if(response.ok){
             result[i].Status = "Online";
@@ -29,3 +29,4 @@ export async function GET({request}) {
     status: 200
   });
 }
+s

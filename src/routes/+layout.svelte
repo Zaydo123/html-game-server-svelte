@@ -23,7 +23,6 @@ $: websiteWidth, updateTitle();
 
 
 </script>
-
 <svelte:window bind:innerWidth={websiteWidth} />
 
 {#if browser}
