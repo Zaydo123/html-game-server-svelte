@@ -27,5 +27,7 @@ for var, value in env_vars.items():
         # Press TAB twice to move to the next line
         pyautogui.press('tab')
         pyautogui.press('tab')
+        # Press ENTER to save
+        pyautogui.press('enter')
 
 print("Finished Typing!")
