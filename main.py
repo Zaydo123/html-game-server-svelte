@@ -15,6 +15,7 @@ pyautogui.PAUSE = 0.02
 # Give some time to the user to focus on the field where the typing needs to happen
 time.sleep(5)
 
+num = 0
 for var, value in env_vars.items():
     # Check if variable is from .env file
     if var in open('.env').read():
@@ -26,8 +27,12 @@ for var, value in env_vars.items():
         pyautogui.write(value)
         # Press TAB twice to move to the next line
         pyautogui.press('tab')
-        pyautogui.press('tab')
         # Press ENTER to save
         pyautogui.press('enter')
+
+        for i in range(0,52+num):
+            pyautogui.press('tab')
+
+        num += 4
 
 print("Finished Typing!")
