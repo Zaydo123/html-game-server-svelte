@@ -1,38 +1,29 @@
-import time
-import pyautogui
-from dotenv import load_dotenv
 import os
+import json
+import argparse
+from dotenv import load_dotenv
 
-# Load .env file
-load_dotenv()
+def load_env_vars():
+    # Load .env file
+    load_dotenv()
 
-# Retrieve all environment variables
-env_vars = os.environ
+    # Retrieve only local environment variables
+    env_vars = {key: value for key, value in os.environ.items() if key in open('.env').read()}
 
-# Add delay between each command to handle the typing speed
-pyautogui.PAUSE = 0.02
+    return env_vars
 
-# Give some time to the user to focus on the field where the typing needs to happen
-time.sleep(5)
+def main():
+    parser = argparse.ArgumentParser(description='CLI tool for loading environment variables')
+    parser.add_argument('--json', action='store_true', help='Output as JSON')
+    args = parser.parse_args()
 
-num = 0
-for var, value in env_vars.items():
-    # Check if variable is from .env file
-    if var in open('.env').read():
-        # Type variable name
-        pyautogui.write(var)
-        # Press TAB
-        pyautogui.press('tab')
-        # Type variable value
-        pyautogui.write(value)
-        # Press TAB twice to move to the next line
-        pyautogui.press('tab')
-        # Press ENTER to save
-        pyautogui.press('enter')
+    env_vars = load_env_vars()
 
-        for i in range(0,52+num):
-            pyautogui.press('tab')
+    if args.json:
+        print(json.dumps(env_vars))
+    else:
+        for key, value in env_vars.items():
+            print(f'{key}={value}')
 
-        num += 4
-
-print("Finished Typing!")
+if __name__ == '__main__':
+    main()
