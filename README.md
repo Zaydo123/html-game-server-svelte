@@ -1,12 +1,11 @@
 # Svelte Game Server
 - [Svelte Game Server](#svelte-game-server)
 - [Quick Start](#quick-start)
-  - [Step 1 - Setup Reverse Proxy](#step-1---setup-reverse-proxy)
-  - [Step 2 - Create DB Tables (use sql client of your choice)](#step-2---create-db-tables-use-sql-client-of-your-choice)
-  - [Step 3 - Download Docker Image](#step-3---download-docker-image)
-  - [Step 4 - Create .env File](#step-4---create-env-file)
-  - [Step 5 - Run Docker Container](#step-5---run-docker-container)
-  - [Step 6 - Add Games To The Server](#step-6---add-games-to-the-server)
+  - [Step 1 - Create MariaDB Database and Make Tables](#step-1---create-mariadb-database-and-make-tables)
+  - [Step 2 - Clone Repo](#step-2---clone-repo)
+  - [Step 3 - Create .env File](#step-3---create-env-file)
+  - [Step 4 - Run Deploy Script](#step-4---run-deploy-script)
+  - [Step 5 - Add Games To The Server](#step-5---add-games-to-the-server)
 - [Developing](#developing)
 - [Building](#building)
 
@@ -15,35 +14,29 @@
 Prerequisites to run this project:
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
-- [Nginx](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/) or [Caddy](https://caddyserver.com/docs/install)
 - [Cloudflare R2 Bucket](https://developers.cloudflare.com/r2/)
 - [Adsense Account](https://www.google.com/adsense/start/)
 - [MariaDB Database](https://mariadb.org/download/)
-  
+- [Domain Name Pointing To Your Server](https://www.namecheap.com/support/knowledgebase/article.aspx/319/2237/how-can-i-set-up-an-a-address-record-for-my-domain)
 
-## Step 1 - Setup Reverse Proxy
-
-- [Nginx](https://www.digitalocean.com/community/tutorials/how-to-configure-nginx-as-a-reverse-proxy-on-ubuntu-22-04) or [Caddy](https://caddyserver.com/docs/quick-starts/reverse-proxy)
-
-## Step 2 - Create DB Tables (use sql client of your choice)
+## Step 1 - Create MariaDB Database and Make Tables
 - [Create DB](./DB.md)
 
-## Step 3 - Download Docker Image
-
+## Step 2 - Clone Repo
 ```bash
 docker pull zaydalzein/svelte-game-server
 ```
 
-## Step 4 - Create .env File 
+## Step 3 - Create .env File 
 look at [.env.example](./.env.example) for an example
 
-
-## Step 5 - Run Docker Container
+## Step 4 - Run Deploy Script
 ```bash
-docker compose up -d
+chmod +x deploy.sh
+./deploy.sh
 ```
 
-## Step 6 - Add Games To The Server
+## Step 5 - Add Games To The Server
 - [localhost:3000/admin](http://localhost:3000/admin)
 - Click on the "+" button to add a new game and fill in the details
 
@@ -70,11 +63,15 @@ To create a production version of your app (without docker):
 npm run build
 ```
 
-With docker (recommended):
+With docker build:
 ```bash
 docker build -t zaydalzein/svelte-game-server --platform=linux/amd64 .
 ```
 
+Run with docker-compose (recommended):
+```bash
+docker-compose up -d --build
+```
 
 
 
