@@ -15,6 +15,6 @@ for domain in "${domain_array[@]}"; do
 done
 
 echo "Building..."
-docker-compose up -d --build
+docker compose up -d --build
 
 echo "Done."
