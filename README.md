@@ -13,7 +13,6 @@
 
 Prerequisites to run this project:
 - [Docker](https://docs.docker.com/get-docker/)
-- [Docker Compose](https://docs.docker.com/compose/install/)
 - [Cloudflare R2 Bucket](https://developers.cloudflare.com/r2/)
 - [Adsense Account](https://www.google.com/adsense/start/)
 - [MariaDB Database](https://mariadb.org/download/)
@@ -70,7 +69,7 @@ docker build -t zaydalzein/svelte-game-server --platform=linux/amd64 .
 
 Run with docker-compose (recommended):
 ```bash
-docker-compose up -d --build
+docker compose up -d --build
 ```
 
 
