@@ -50,9 +50,6 @@ services:
     env_file:
       - .env
 
-    environment:
-      - VIRTUAL_HOST:${VIRTUAL_HOST_DOMAIN}
-
     networks:
       - default
 
