@@ -5,7 +5,7 @@ git pull
 read -p "Enter the domain you're deploying to: " domain
 
 echo "$domain {
-    reverse_proxy node:app:3000 {
+    reverse_proxy svelte:app:3000 {
         header_up X-Real-IP {remote}
     }
 }" > Caddyfile

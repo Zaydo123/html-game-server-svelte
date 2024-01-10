@@ -23,6 +23,7 @@ services:
 
   # Web server
   svelte-app:
+    container_name: svelte-app
     build: 
       context: .
       dockerfile: Dockerfile
