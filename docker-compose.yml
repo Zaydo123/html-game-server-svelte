@@ -1,10 +1,29 @@
 version: '3.8'
 services:
+  # Image update service
   watchtower:
     image: containrrr/watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-  your-service:
+
+  # Reverse proxy -- caddy
+  caddy:
+    container_name: caddy-service
+    image: caddy:alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - $PWD/site:/srv
+      - caddy_data:/data
+      - caddy_config:/config
+
+  # Web server
+  svelte-app:
+    container_name: svelte-app
     build: 
       context: .
       dockerfile: Dockerfile
@@ -30,9 +49,15 @@ services:
         PUBLIC_ADSENSE_CLIENT_ID: ${PUBLIC_ADSENSE_CLIENT_ID}
         PUBLIC_ADSENSE_GAME_SIDES_SLOT_ID: ${PUBLIC_ADSENSE_GAME_SIDES_SLOT_ID}
 
-
     env_file:
       - .env
 
+    networks:
+      - default
+
     ports:
       - "3000:3000"
+
+volumes:
+  caddy_data:
+  caddy_config:
