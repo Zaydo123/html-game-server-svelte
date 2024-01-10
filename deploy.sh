@@ -5,6 +5,11 @@ read -p "Enter the domains you're deploying to (separated by commas): " domains
 
 IFS=',' read -ra domain_array <<< "$domains"
 
+#if caddyfile exists, delete it
+if [ -f Caddyfile ]; then
+    rm Caddyfile
+fi
+
 for domain in "${domain_array[@]}"; do
     echo "$domain {
         reverse_proxy svelte-app:3000 {
