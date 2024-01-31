@@ -5,7 +5,8 @@ services:
     image: containrrr/watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-
+    command: --interval 300 
+    
   # Reverse proxy -- caddy
   caddy:
     container_name: caddy-service
@@ -57,6 +58,8 @@ services:
 
     ports:
       - "3000:3000"
+
+    restart: unless-stopped
 
 volumes:
   caddy_data:
