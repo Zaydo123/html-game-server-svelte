@@ -25,7 +25,7 @@ class database{
             rows = await conn.query(sql, values);
         }
         catch (err) {
-            throw err;
+            console.log(err);
         }
         finally {
             if (conn){
