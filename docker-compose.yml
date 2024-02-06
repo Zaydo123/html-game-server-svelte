@@ -5,8 +5,8 @@ services:
     image: containrrr/watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    command: --interval 300 
-    
+    command: --interval 300
+
   # Reverse proxy -- caddy
   caddy:
     container_name: caddy-service
@@ -24,6 +24,7 @@ services:
 
   # Web server
   svelte-app:
+    image: zaydalzein/svelte-game-server:latest
     container_name: svelte-app
     build: 
       context: .
