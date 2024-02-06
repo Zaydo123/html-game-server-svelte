@@ -1,3 +1,7 @@
+secrets:
+  envfile:
+    file: .env
+
 version: '3.8'
 services:
   # Image update service
@@ -6,6 +10,8 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     command: --interval 300
+    secrets:
+      - envfile
 
   # Reverse proxy -- caddy
   caddy:
