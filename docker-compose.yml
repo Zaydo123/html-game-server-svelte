@@ -12,6 +12,7 @@ services:
     command: --interval 300
     secrets:
       - envfile
+      
 
   # Reverse proxy -- caddy
   caddy:

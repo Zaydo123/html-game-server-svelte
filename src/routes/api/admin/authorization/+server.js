@@ -1,12 +1,12 @@
 
-import { SECRET_ADMIN_USERNAME, SECRET_ADMIN_PASSWORD } from '$env/static/private';
+import { SECRET_ADMIN_USERNAME, SECRET_ADMIN_PASSWORD } from '$env/dynamic/private';
 import { hashPassword, verifyPassword, generateSessionCookie, generateSessionToken } from '$lib/authUtils';
 import { adminAuthCookie } from '$lib/stores';
 // This should be done once when the server starts, not every time you verify a password
-const hashedAdminPassword = hashPassword(SECRET_ADMIN_PASSWORD);
+const hashedAdminPassword = hashPassword(process.env.SECRET_ADMIN_PASSWORD);
 
 function authenticate(username, password) {
-    if (username === SECRET_ADMIN_USERNAME && verifyPassword(password, hashedAdminPassword)) {
+    if (username === process.env.SECRET_ADMIN_USERNAME && verifyPassword(password, hashedAdminPassword)) {
         // User is authenticated
         return true;
     } else {

@@ -1,9 +1,11 @@
-import { CHROMEBOOK_ONLY_MODE } from "$env/static/private";
+import { CHROMEBOOK_ONLY_MODE } from "$env/dynamic/private";
 
 let CBOM = false;
 
-if(CHROMEBOOK_ONLY_MODE.toLowerCase() === "true"){
+if(process.env.CHROMEBOOK_ONLY_MODE !== undefined){
+    if(process.env.CHROMEBOOK_ONLY_MODE.toLowerCase() === "true"){
     CBOM = true;
+    }
 }
     
 export async function GET(data){

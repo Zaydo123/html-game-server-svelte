@@ -1,4 +1,4 @@
-import {SECRET_CLOUDFLARE_ACCESS_KEY_ID, SECRET_CLOUDFLARE_ACCESS_KEY, SECRET_CLOUDFLARE_TOKEN_VALUE, SECRET_CLOUDFLARE_ENDPOINT, SECRET_CLOUDFLARE_BUCKET_NAME, SECRET_CLOUDFLARE_BUCKET_URL} from '$env/static/private';
+import {SECRET_CLOUDFLARE_ACCESS_KEY_ID, SECRET_CLOUDFLARE_ACCESS_KEY, SECRET_CLOUDFLARE_TOKEN_VALUE, SECRET_CLOUDFLARE_ENDPOINT, SECRET_CLOUDFLARE_BUCKET_NAME, SECRET_CLOUDFLARE_BUCKET_URL} from '$env/dynamic/private';
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
 
 
@@ -6,10 +6,10 @@ async function newS3Client() {
     return new S3Client({
       region: 'auto',
       credentials: {
-          accessKeyId: SECRET_CLOUDFLARE_ACCESS_KEY_ID,
-          secretAccessKey: SECRET_CLOUDFLARE_ACCESS_KEY
+          accessKeyId: process.env.SECRET_CLOUDFLARE_ACCESS_KEY_ID,
+          secretAccessKey: process.env.SECRET_CLOUDFLARE_ACCESS_KEY
       },
-      endpoint: SECRET_CLOUDFLARE_ENDPOINT
+      endpoint: process.env.SECRET_CLOUDFLARE_ENDPOINT
     });
 }
 
@@ -40,7 +40,7 @@ async function uploadFileToS3(directory, file, metadata) {
 
 
     const params = {
-        Bucket: SECRET_CLOUDFLARE_BUCKET_NAME,
+        Bucket: process.env.SECRET_CLOUDFLARE_BUCKET_NAME,
         Key: `${directory}/${fileName}`,
         Body: file,
         ContentType: fileType,
@@ -49,7 +49,7 @@ async function uploadFileToS3(directory, file, metadata) {
 
     const command = new PutObjectCommand(params);
     let result = await s3.send(command);
-    let url = `${SECRET_CLOUDFLARE_BUCKET_URL}/${directory}/${fileName}`;
+    let url = `${process.env.SECRET_CLOUDFLARE_BUCKET_URL}/${directory}/${fileName}`;
     return {"result": result, "url": url};
 }
 
