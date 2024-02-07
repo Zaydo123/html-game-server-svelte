@@ -1,4 +1,4 @@
-import { PUBLIC_ADSENSE_CLIENT_ID, PUBLIC_ADSENSE_GAME_SIDES_SLOT_ID } from '$env/static/public';
+import { PUBLIC_ADSENSE_CLIENT_ID, PUBLIC_ADSENSE_GAME_SIDES_SLOT_ID } from '$env/dynamic/public';
 import { db } from '$lib/db.js';
 
 export async function GET({ params }) {
@@ -23,8 +23,8 @@ export async function GET({ params }) {
     let game = await db.get(sql, [id]);
     if (game && game.length > 0) {
         game[0].adsense = {
-            client: PUBLIC_ADSENSE_CLIENT_ID,
-            slot: PUBLIC_ADSENSE_GAME_SIDES_SLOT_ID
+            client: process.env.PUBLIC_ADSENSE_CLIENT_ID,
+            slot: process.env.PUBLIC_ADSENSE_GAME_SIDES_SLOT_ID
         };
     }
     
