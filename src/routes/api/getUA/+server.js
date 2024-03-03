@@ -1,9 +1,9 @@
-import { CHROMEBOOK_ONLY_MODE } from "$env/dynamic/private";
+import { env } from "$env/dynamic/private";
 
 let CBOM = false;
 
-if(process.env.CHROMEBOOK_ONLY_MODE !== undefined){
-    if(process.env.CHROMEBOOK_ONLY_MODE.toLowerCase() === "true"){
+if(env.CHROMEBOOK_ONLY_MODE !== undefined){
+    if(env.CHROMEBOOK_ONLY_MODE.toLowerCase() === "true"){
     CBOM = true;
     }
 }

@@ -2,17 +2,17 @@
 //import env files for database connection
 // The code above creates a connection pool to the database, which is used to read and write data to the database. The createPool function creates a connection pool that can be used to create connections to the database. The pool variable is the connection pool that is used to create connections to the database.
 
-import { SECRET_DATABASE_URL, SECRET_DATABASE_PORT, SECRET_DATABASE_USER, SECRET_DATABASE_PASSWORD, SECRET_DATABASE_NAME } from '$env/dynamic/private';
+import { env } from '$env/dynamic/private';
 import mariadb from "mariadb";
 
 class database{
     constructor() {
         this.pool = mariadb.createPool({
-            host: process.env.SECRET_DATABASE_URL,
-            port: process.env.SECRET_DATABASE_PORT,
-            user: process.env.SECRET_DATABASE_USER,
-            password: process.env.SECRET_DATABASE_PASSWORD,
-            database: process.env.SECRET_DATABASE_NAME,
+            host: env.SECRET_DATABASE_URL,
+            port: env.SECRET_DATABASE_PORT,
+            user: env.SECRET_DATABASE_USER,
+            password: env.SECRET_DATABASE_PASSWORD,
+            database: env.SECRET_DATABASE_NAME,
             connectionLimit: 5
         });
     }
